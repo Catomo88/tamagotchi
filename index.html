@@ -16,18 +16,21 @@ body.tab-pk{background:linear-gradient(180deg,#4A0020 0%,#C2185B 40%,#E91E8C 70%
 body.tab-ps{background:linear-gradient(180deg,#1A0040 0%,#6A1B9A 40%,#9C27B0 70%,#CE93D8 100%);}
 body.tab-jf{background:linear-gradient(180deg,#1B3A1A 0%,#2E7D32 40%,#43A047 70%,#A5D6A7 100%);}
 body.tab-cb{background:linear-gradient(180deg,#050014 0%,#0D0030 30%,#1A0050 60%,#2D0070 100%);}
+body.tab-guide{background:linear-gradient(180deg,#1C1008 0%,#3E2000 35%,#5D3A00 65%,#8B5E00 100%);}
 body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;transition:background 0.6s;}
 body.tab-bw::before{background:radial-gradient(ellipse at 20% 30%,rgba(66,165,245,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(128,222,234,.1) 0%,transparent 50%);}
 body.tab-pk::before{background:radial-gradient(ellipse at 20% 30%,rgba(255,100,150,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(255,200,220,.1) 0%,transparent 50%);}
 body.tab-ps::before{background:radial-gradient(ellipse at 20% 30%,rgba(180,100,255,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(220,180,255,.1) 0%,transparent 50%);}
 body.tab-jf::before{background:radial-gradient(ellipse at 20% 30%,rgba(100,200,100,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(200,230,150,.1) 0%,transparent 50%);}
 body.tab-cb::before{background:radial-gradient(ellipse at 30% 40%,rgba(100,50,255,.2) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(255,200,50,.1) 0%,transparent 50%);}
+body.tab-guide::before{background:radial-gradient(ellipse at 25% 35%,rgba(255,180,50,.12) 0%,transparent 50%),radial-gradient(ellipse at 75% 65%,rgba(255,140,0,.08) 0%,transparent 50%);}
 .bubble{position:fixed;border-radius:50%;animation:rise linear infinite;pointer-events:none;z-index:0;transition:background 0.6s;}
 body.tab-bw .bubble{background:rgba(255,255,255,.06);}
 body.tab-pk .bubble{background:rgba(255,200,220,.08);}
 body.tab-ps .bubble{background:rgba(220,180,255,.08);}
 body.tab-jf .bubble{background:rgba(200,255,180,.08);}
 body.tab-cb .bubble{background:rgba(255,255,200,.1);}
+body.tab-guide .bubble{background:rgba(255,200,100,.07);}
 @keyframes rise{0%{transform:translateY(100vh) scale(0);opacity:0;}50%{opacity:1;}100%{transform:translateY(-10vh) scale(1);opacity:0;}}
 .container{max-width:900px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1;}
 .header{text-align:center;padding:40px 0 28px;animation:fadeDown .8s ease;}
@@ -42,6 +45,7 @@ body.tab-cb .bubble{background:rgba(255,255,200,.1);}
 .tab-btn.active-ps{background:linear-gradient(135deg,#6A1B9A,#CE93D8);border-color:#CE93D8;color:white;box-shadow:0 4px 18px rgba(206,147,216,.4);}
 .tab-btn.active-jf{background:linear-gradient(135deg,#2E7D32,#66BB6A);border-color:#66BB6A;color:white;box-shadow:0 4px 18px rgba(102,187,106,.4);}
 .tab-btn.active-cb{background:linear-gradient(135deg,#FFD700,#FF8C00);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,200,50,.4);}
+.tab-btn.active-guide{background:linear-gradient(135deg,#FF8C00,#FFD700);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,160,0,.4);}
 .tab-panel{display:none;animation:fadeUp .4s ease;}
 .tab-panel.active{display:block;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
@@ -103,6 +107,7 @@ body.tab-jf .chip-label{color:#A5D6A7;}
     <button class="tab-btn" onclick="switchTab(this,'ps')">💜 퍼플 스카이</button>
     <button class="tab-btn" onclick="switchTab(this,'jf')">🌿 제이드 포레스트</button>
     <button class="tab-btn" onclick="switchTab(this,'cb')">🔗 교배표</button>
+    <button class="tab-btn" onclick="switchTab(this,'guide')">📖 사용 가이드</button>
   </div>
   <div id="panel-bw" class="tab-panel active">
     <div class="section">
@@ -335,6 +340,205 @@ body.tab-jf .chip-label{color:#A5D6A7;}
             <div class="chip"><span class="chip-icon">📶</span><div><span class="chip-label">통신 조건</span><span class="chip-val">핑크랜드 · 블루워터 등 다른 기기 2가지와 통신</span></div></div>
             <div class="chip"><span class="chip-icon">⭐</span><div><span class="chip-label">케어미스</span><span class="chip-val">케어미스 수 관계없이 진화! (커뮤니티 확인)</span></div></div>
           </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="panel-guide" class="tab-panel">
+
+    <div class="section">
+      <div class="section-title">&#127918; 버튼 &amp; 다이얼 사용법</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:14px;">
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:14px;">
+          <span style="font-size:1.4em;">&#128308; A 버튼</span>
+          <span class="chip-label" style="color:#FCA5A5;">왼쪽 버튼</span>
+          <span class="chip-val">메뉴 이동(왼쪽/위) / 숫자 올리기 / 선택지 변경</span>
+        </div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:14px;">
+          <span style="font-size:1.4em;">&#128994; B 버튼</span>
+          <span class="chip-label" style="color:#86EFAC;">가운데 버튼</span>
+          <span class="chip-val">확인 / 실행 / 결정 / 대화창 넘기기</span>
+        </div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:14px;">
+          <span style="font-size:1.4em;">&#128309; C 버튼</span>
+          <span class="chip-label" style="color:#93C5FD;">오른쪽 버튼</span>
+          <span class="chip-val">뒤로 가기 / 취소 / 메뉴 닫기</span>
+        </div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:14px;">
+          <span style="font-size:1.4em;">&#9711; 줌 다이얼</span>
+          <span class="chip-label" style="color:#C4B5FD;">오른쪽 안테나</span>
+          <span class="chip-val"><strong>돌리기</strong> = 화면 확대/축소&nbsp;&nbsp;<strong>꾹 누르기</strong> = LAB 메뉴</span>
+        </div>
+      </div>
+      <div class="tip"><span class="tip-em">&#128161;</span><span>타마 필드 화면(중간 줌)에서 <strong>A버튼</strong>을 누르면 돌봄 메뉴가 열려요!</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#128301; 화면 3종류 (줌 다이얼로 전환)</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+        <div class="chip" style="flex-direction:column;align-items:center;text-align:center;gap:6px;padding:16px 10px;">
+          <span style="font-size:2em;">&#127758;</span>
+          <span class="chip-label">타마 스페이스</span>
+          <span class="chip-val">우주에서 보는 행성 전체. 가장 멀리서 보는 화면.</span>
+        </div>
+        <div class="chip" style="flex-direction:column;align-items:center;text-align:center;gap:6px;padding:16px 10px;border-color:rgba(255,213,79,.4);background:rgba(255,213,79,.1);">
+          <span style="font-size:2em;">&#127807;</span>
+          <span class="chip-label">타마 필드 &#11088; 주화면</span>
+          <span class="chip-val">다마고치가 사는 서식지. 돌봄은 여기서!</span>
+        </div>
+        <div class="chip" style="flex-direction:column;align-items:center;text-align:center;gap:6px;padding:16px 10px;">
+          <span style="font-size:2em;">&#128300;</span>
+          <span class="chip-label">타마 셀</span>
+          <span class="chip-val">몸속 세포 확인. 어떤 청소년으로 자랄지 예측 가능.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#128150; 돌봄 방법 (타마 필드 &rarr; A버튼)</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;">
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:13px;"><span style="font-size:1.5em;">&#127834;</span><span class="chip-label">밥 주기 (FEED)</span><span class="chip-val">FOOD(식사) / SWEETS(간식). 배고픔 게이지 줄면 챙겨줘요!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:13px;"><span style="font-size:1.5em;">&#127918;</span><span class="chip-label">놀아주기 (PLAY)</span><span class="chip-val">행복도 게이지 채우기. 미니게임 여러 종류 중 선택!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:13px;"><span style="font-size:1.5em;">&#129396;</span><span class="chip-label">씻기기 (CLEAN)</span><span class="chip-val">더러움 표시가 뜨면 씻겨줘요. 버튼 연타로!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:13px;"><span style="font-size:1.5em;">&#128169;</span><span class="chip-label">응가 치우기</span><span class="chip-val">쌓인 응가는 빨리 치워요. 바이오 연료로 변환!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:13px;"><span style="font-size:1.5em;">&#128138;</span><span class="chip-label">약 주기 (MEDICINE)</span><span class="chip-val">아프면 약 아이콘이 뜨면 빨리 줘요!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:5px;padding:13px;"><span style="font-size:1.5em;">&#128564;</span><span class="chip-label">재우기 (SLEEP)</span><span class="chip-val">오후 7~10시 사이 재울 수 있어요. 이후 자동 취침.</span></div>
+      </div>
+      <div class="tip"><span class="tip-em">&#9888;&#65039;</span><span><strong>케어미스(Care Miss)</strong>: 배고프거나 기분이 나쁜데 15분 안에 안 돌봐주면 누적돼요. 많이 쌓이면 좋은 성체로 못 자라요!</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#128300; LAB 메뉴 <span style="color:rgba(255,255,255,.5);font-size:.7em;">다이얼 꾹 누르기</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;">
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:4px;padding:13px;"><span style="font-size:1.3em;">&#128202;</span><span class="chip-label">INFORMATION</span><span class="chip-val">행성 이름, 활동 일수, 고치포인트, 미션 진행 확인</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:4px;padding:13px;"><span style="font-size:1.3em;">&#127918;</span><span class="chip-label">MINIGAME</span><span class="chip-val">자는 동안에도 가능! 고치포인트 획득</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:4px;padding:13px;"><span style="font-size:1.3em;">&#128717;</span><span class="chip-label">SHOP</span><span class="chip-val">고치포인트로 아이템 구매. 샵 코드 입력도 여기!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:4px;padding:13px;"><span style="font-size:1.3em;">&#127942;</span><span class="chip-label">MISSION</span><span class="chip-val">22가지 임무. 완료 시 1000G 획득!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:4px;padding:13px;"><span style="font-size:1.3em;">&#128246;</span><span class="chip-label">CONNECT</span><span class="chip-val">다른 기기와 통신. 비밀 캐릭터 교배 필수!</span></div>
+        <div class="chip" style="flex-direction:column;align-items:flex-start;gap:4px;padding:13px;"><span style="font-size:1.3em;">&#9881;&#65039;</span><span class="chip-label">SETTINGS</span><span class="chip-val">시간, 날짜, 소리, 언어, 밝기 설정</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#129370; 알 새로 시작하기</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #FCD34D;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:1em;margin-bottom:6px;">&#128260; 방법 1 &mdash; 성체 해방 후 새 알 (권장)</div>
+          <div style="font-size:.84em;color:rgba(255,255,255,.85);line-height:1.9;"><strong>C + A 버튼 동시에 꾹</strong> &rarr; "NEW EGG" 선택<br><span style="color:rgba(255,255,255,.5);">기존 성체는 필드에 최대 4마리까지 남아요</span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #FCA5A5;">
+          <div style="font-family:'Jua',sans-serif;color:#FCA5A5;font-size:1em;margin-bottom:6px;">&#9888;&#65039; 방법 2 &mdash; 전체 초기화 (데이터 삭제)</div>
+          <div style="font-size:.84em;color:rgba(255,255,255,.85);line-height:1.9;"><strong>LAB &rarr; SETTINGS &rarr; RESET</strong><br><strong style="color:#FCA5A5;">행성 레벨·고치포인트 등 모든 데이터 삭제!</strong><br><span style="color:rgba(255,255,255,.5);">언어 변경이 필요할 때 사용</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#128246; 통신 방법</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:rgba(134,239,172,.08);border-radius:14px;padding:14px 16px;border-left:4px solid #86EFAC;">
+          <div style="font-family:'Jua',sans-serif;color:#86EFAC;margin-bottom:8px;">&#128205; 통신 순서</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px;font-size:.84em;color:rgba(255,255,255,.85);line-height:1.8;">
+            <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;">&#9312; 두 기기를 <strong>가까이(10cm 이내)</strong> 붙여요</div>
+            <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;">&#9313; LAB &rarr; <strong>CONNECT</strong> 선택</div>
+            <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;">&#9314; 양쪽 모두 CONNECT 진입 후 <strong>B버튼</strong></div>
+            <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:10px;">&#9315; 연결되면 미니게임 또는 교류 애니메이션 재생</div>
+          </div>
+        </div>
+        <div style="background:rgba(196,181,253,.08);border-radius:14px;padding:14px 16px;border-left:4px solid #C4B5FD;">
+          <div style="font-family:'Jua',sans-serif;color:#C4B5FD;margin-bottom:6px;">&#127775; 비밀 캐릭터 교배 조건</div>
+          <div style="font-size:.84em;color:rgba(255,255,255,.85);line-height:1.9;">
+            &bull; <strong style="color:#FDE68A;">청소년(영) 상태</strong>일 때만 가능<br>
+            &bull; <strong style="color:#FDE68A;">서로 다른 색깔 기기 2종류</strong>와 각각 통신<br>
+            &bull; 각 버전마다 <strong style="color:#FCA5A5;">교배 불가 청소년</strong>이 있음 (교배표 탭 참고)<br>
+            &bull; 케어미스 수와 무관하게 조건만 맞으면 진화!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#128717; 샵 코드 입력</div>
+      <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+        <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:2.1;"><strong style="color:#FDE68A;">LAB &rarr; SHOP &rarr; SHOP CODE &rarr; 8자리 숫자 입력</strong><br><span style="color:rgba(255,255,255,.5);">코드 입력 = 아이템 해금. 구매는 고치포인트 필요!</span></div>
+      </div>
+      <div style="font-family:'Jua',sans-serif;color:rgba(255,255,255,.7);font-size:.9em;margin-bottom:8px;">추천 코드 모음</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:8px;font-size:.82em;">
+        <div class="chip"><span class="chip-icon">&#128038;</span><div><span class="chip-label">37519184</span><span class="chip-val">Babymarutchi Plush (300G)</span></div></div>
+        <div class="chip"><span class="chip-icon">&#127880;</span><div><span class="chip-label">36795645</span><span class="chip-val">Balloons (300G)</span></div></div>
+        <div class="chip"><span class="chip-icon">&#128640;</span><div><span class="chip-label">94257857</span><span class="chip-val">Handy Rocket (400G)</span></div></div>
+        <div class="chip"><span class="chip-icon">&#128161;</span><div><span class="chip-label">10854756</span><span class="chip-val">Light Stick (200G)</span></div></div>
+        <div class="chip"><span class="chip-icon">&#128008;</span><div><span class="chip-label">68527158</span><span class="chip-val">Mametchi Plush (200G)</span></div></div>
+        <div class="chip"><span class="chip-icon">&#127983;</span><div><span class="chip-label">83012792</span><span class="chip-val">Lantern (500G)</span></div></div>
+        <div class="chip"><span class="chip-icon">&#127890;</span><div><span class="chip-label">78357605</span><span class="chip-val">Tama Backpack (300G)</span></div></div>
+        <div class="chip"><span class="chip-icon">&#128141;</span><div><span class="chip-label">50536071</span><span class="chip-val">Planet Ring (400G)</span></div></div>
+      </div>
+      <div class="tip"><span class="tip-em">&#128161;</span><span>중복 입력해도 괜찮아요. 미리 다 넣어두면 고치포인트 생겼을 때 바로 구매 가능!</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#128176; 고치포인트 모으기</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="background:rgba(134,239,172,.1);border-radius:14px;padding:14px;border:1px solid rgba(134,239,172,.25);">
+          <div style="font-family:'Jua',sans-serif;color:#86EFAC;margin-bottom:8px;">&#128176; 버는 방법</div>
+          <ul style="list-style:none;font-size:.84em;color:rgba(255,255,255,.85);line-height:2.1;">
+            <li>&#127918; LAB 미니게임</li>
+            <li>&#127942; 미션 완료 (+1000G)</li>
+            <li>&#129370; 달걀 사냥 (오후 7시 전)</li>
+            <li>&#128169; 응가 &rarr; 바이오 연료 변환</li>
+            <li>&#128246; 다른 기기와 통신</li>
+          </ul>
+        </div>
+        <div style="background:rgba(252,165,165,.1);border-radius:14px;padding:14px;border:1px solid rgba(252,165,165,.25);">
+          <div style="font-family:'Jua',sans-serif;color:#FCA5A5;margin-bottom:8px;">&#128717; 쓰는 방법</div>
+          <ul style="list-style:none;font-size:.84em;color:rgba(255,255,255,.85);line-height:2.1;">
+            <li>&#127857; 특별 밥·간식 구매</li>
+            <li>&#129529; 야외 장난감</li>
+            <li>&#127912; 행성 꾸미기 아이템</li>
+            <li>&#128273; 샵 코드 해금 아이템</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#128680; 긴급 상황 대처</div>
+      <div style="display:grid;gap:10px;">
+        <div style="background:rgba(239,68,68,.12);border-radius:14px;padding:14px 16px;border-left:4px solid #EF4444;">
+          <div style="font-family:'Jua',sans-serif;color:#FCA5A5;margin-bottom:5px;">&#9763; 운석 공격!</div>
+          <div style="font-size:.84em;color:rgba(255,255,255,.8);line-height:1.8;">화면 켤 때 자동 시작. <strong>A·B·C 버튼</strong>으로 운석 펀치! 못 막으면 다마고치 부상</div>
+        </div>
+        <div style="background:rgba(251,146,60,.12);border-radius:14px;padding:14px 16px;border-left:4px solid #FB923C;">
+          <div style="font-family:'Jua',sans-serif;color:#FED7AA;margin-bottom:5px;">&#129430; 도도도치 습격!</div>
+          <div style="font-size:.84em;color:rgba(255,255,255,.8);line-height:1.8;">이상한 생물 떼가 몰려와요. 빠르게 미니게임 클리어! 실패 시 야외 장난감 사라짐</div>
+        </div>
+      </div>
+      <div class="tip"><span class="tip-em">&#9888;&#65039;</span><span>긴급 상황 실패 후 부상 상태엔 <strong>약을 주면 회복</strong>돼요!</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#10067; 자주 묻는 질문</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.93em;margin-bottom:4px;">Q. 낮밤이 반대예요!</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">&rarr; LAB &rarr; SETTINGS &rarr; TIME에서 <strong>AM/PM 확인</strong>. 뒤바뀌면 낮밤이 반대예요.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.93em;margin-bottom:4px;">Q. 화면이 꺼졌어요!</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">&rarr; 절전 모드예요. 아무 버튼 누르면 켜져요. 다마고치가 자는 중일 수도 있어요.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.93em;margin-bottom:4px;">Q. 언어를 한국어로 바꾸고 싶어요!</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">&rarr; LAB &rarr; SETTINGS &rarr; RESET으로 <strong>초기화</strong>. 단, 모든 데이터 삭제!</div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.93em;margin-bottom:4px;">Q. 원하는 성체로 키우려면?</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">&rarr; <strong>어린이 때 목표 청소년에 맞는 음식</strong>을 집중해서 먹이고, <strong>케어미스 0~1개</strong>로 유지! 진화표 탭 참고.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.93em;margin-bottom:4px;">Q. 자는 동안 할 수 있는 게 있나요?</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">&rarr; <strong>LAB 미니게임</strong>은 자는 동안에도 가능! 고치포인트 모으기 최적 타이밍이에요.</div>
         </div>
       </div>
     </div>
