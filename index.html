@@ -440,21 +440,21 @@ body.tab-jf .chip-label{color:#A5D6A7;}
         <div style="background:rgba(252,211,77,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #FCD34D;">
           <div style="font-family:'Jua',sans-serif;color:#FCD34D;font-size:1em;margin-bottom:6px;">&#129303; 어린이 시기 필드 이동 시 일어나는 일</div>
           <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.85;">
-            &bull; 다른 필드로 이동 후 <strong>1시간 후</strong> 해당 필드의 어린이로 변신!<br>
-            &nbsp;&nbsp;(예: 물 키드 &rarr; 땅 필드 이동 &rarr; 1시간 후 땅 키드)<br>
-            &bull; 이동을 또 하면 타이머 리셋<br>
-            &bull; 이전 필드 세포는 사라져요 (필드 종족 변경 가능)
+            &bull; 다른 필드로 이동하면 원래 키드 정체성은 <strong>유지</strong>되면서 새 필드의 속성(세포)이 <strong>혼합</strong>돼요!<br>
+            &nbsp;&nbsp;(예: 물 키드 &rarr; 하늘 필드 이동 &rarr; <strong style="color:#FDE68A;">물 키드 + 하늘 속성</strong>이 합쳐짐)<br>
+            &bull; 청소년으로 성장 시 <strong>외형도 혼합체</strong>로! (예: 물 키드 베이스에 날개가 달리는 등)<br>
+            &bull; 이 혼합 외형은 유전되기 때문에 <strong>유니크한 외모의 자손</strong>을 만들 수 있어요!
           </div>
         </div>
         <div style="background:rgba(206,147,216,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #CE93D8;">
           <div style="font-family:'Jua',sans-serif;color:#CE93D8;font-size:1em;margin-bottom:6px;">&#10024; 숨겨진 진화: 빅베이비마루치 (Bbmarutchi)</div>
           <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.85;">
-            어린이 단계에서 필드를 <strong>계속 바꿔가며</strong> 키워 28시간 동안 <strong>세포 종류가 섞인 상태</strong>로 유지되면, 일반 청소년이 아니라 <strong style="color:#E1BEE7;">빅베이비마루치(Bbmarutchi)</strong>로 진화해요!<br>
+            어린이 단계에서 필드를 <strong>계속 바꿔가며</strong> 여러 속성을 섞어 28시간 동안 유지하면, 혼합이 극단적으로 되어 일반 청소년이 아닌 <strong style="color:#E1BEE7;">빅베이비마루치(Bbmarutchi)</strong>로 진화해요!<br>
             <span style="color:rgba(255,255,255,.55);">※ 평소보다 어린이 시기가 4시간 더 길어짐</span>
           </div>
         </div>
       </div>
-      <div class="tip"><span class="tip-em">&#127919;</span><span>특정 필드 캐릭터를 노린다면 <strong>해당 필드에서만</strong> 키우세요. 여러 필드 경험을 시키고 싶다면 빅베이비마루치 도전!</span></div>
+      <div class="tip"><span class="tip-em">&#127919;</span><span>순수 필드 캐릭터를 원하면 <strong>해당 필드에서만</strong> 키우세요. 혼합 외형의 유니크한 캐릭터를 원하면 <strong>일부러 다른 필드를 경험</strong>시켜보세요! 극단적으로 섞으면 빅베이비마루치 도전!</span></div>
     </div>
 
     <!-- 에그 헌트 -->
@@ -826,7 +826,7 @@ function renderCodes() {
     const noteHtml = note ? `<div class="code-note">${note}</div>` : '';
     return `
       <div class="code-card ${isLab?'code-card-lab':''}">
-        <span class="code-emoji">${emoji}</span>
+        ${isLab ? '<span class="code-emoji">'+emoji+'</span>' : '<img class="code-icon" src="icons/'+code+'.png" alt="'+kr+'" onerror="this.outerHTML=\'<span class=code-emoji>'+emoji+'</span>\'">'}
         <div class="code-info">
           <div class="code-name">${typeBadge}<span class="cat-tag ${CAT_CLASSES[cat]}">${CAT_LABELS[cat]}</span>${kr}</div>
           <div class="code-en">${en}</div>
