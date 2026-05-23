@@ -17,6 +17,7 @@ body.tab-ps{background:linear-gradient(180deg,#1A0040 0%,#6A1B9A 40%,#9C27B0 70%
 body.tab-jf{background:linear-gradient(180deg,#1B3A1A 0%,#2E7D32 40%,#43A047 70%,#A5D6A7 100%);}
 body.tab-cb{background:linear-gradient(180deg,#050014 0%,#0D0030 30%,#1A0050 60%,#2D0070 100%);}
 body.tab-guide{background:linear-gradient(180deg,#1C1008 0%,#3E2000 35%,#5D3A00 65%,#8B5E00 100%);}
+body.tab-codes{background:linear-gradient(180deg,#0A0F1F 0%,#1A2547 30%,#2D3B6E 60%,#5B6FB8 100%);}
 body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;transition:background 0.6s;}
 body.tab-bw::before{background:radial-gradient(ellipse at 20% 30%,rgba(66,165,245,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(128,222,234,.1) 0%,transparent 50%);}
 body.tab-pk::before{background:radial-gradient(ellipse at 20% 30%,rgba(255,100,150,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(255,200,220,.1) 0%,transparent 50%);}
@@ -24,6 +25,7 @@ body.tab-ps::before{background:radial-gradient(ellipse at 20% 30%,rgba(180,100,2
 body.tab-jf::before{background:radial-gradient(ellipse at 20% 30%,rgba(100,200,100,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(200,230,150,.1) 0%,transparent 50%);}
 body.tab-cb::before{background:radial-gradient(ellipse at 30% 40%,rgba(100,50,255,.2) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(255,200,50,.1) 0%,transparent 50%);}
 body.tab-guide::before{background:radial-gradient(ellipse at 25% 35%,rgba(255,180,50,.12) 0%,transparent 50%),radial-gradient(ellipse at 75% 65%,rgba(255,140,0,.08) 0%,transparent 50%);}
+body.tab-codes::before{background:radial-gradient(ellipse at 30% 30%,rgba(120,150,255,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 70%,rgba(200,200,255,.08) 0%,transparent 50%);}
 .bubble{position:fixed;border-radius:50%;animation:rise linear infinite;pointer-events:none;z-index:0;transition:background 0.6s;}
 body.tab-bw .bubble{background:rgba(255,255,255,.06);}
 body.tab-pk .bubble{background:rgba(255,200,220,.08);}
@@ -31,6 +33,7 @@ body.tab-ps .bubble{background:rgba(220,180,255,.08);}
 body.tab-jf .bubble{background:rgba(200,255,180,.08);}
 body.tab-cb .bubble{background:rgba(255,255,200,.1);}
 body.tab-guide .bubble{background:rgba(255,200,100,.07);}
+body.tab-codes .bubble{background:rgba(200,220,255,.08);}
 @keyframes rise{0%{transform:translateY(100vh) scale(0);opacity:0;}50%{opacity:1;}100%{transform:translateY(-10vh) scale(1);opacity:0;}}
 .container{max-width:900px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1;}
 .header{text-align:center;padding:40px 0 28px;animation:fadeDown .8s ease;}
@@ -46,6 +49,7 @@ body.tab-guide .bubble{background:rgba(255,200,100,.07);}
 .tab-btn.active-jf{background:linear-gradient(135deg,#2E7D32,#66BB6A);border-color:#66BB6A;color:white;box-shadow:0 4px 18px rgba(102,187,106,.4);}
 .tab-btn.active-cb{background:linear-gradient(135deg,#FFD700,#FF8C00);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,200,50,.4);}
 .tab-btn.active-guide{background:linear-gradient(135deg,#FF8C00,#FFD700);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,160,0,.4);}
+.tab-btn.active-codes{background:linear-gradient(135deg,#3D5AFE,#82B1FF);border-color:#82B1FF;color:white;box-shadow:0 4px 18px rgba(130,177,255,.4);}
 .tab-panel{display:none;animation:fadeUp .4s ease;}
 .tab-panel.active{display:block;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
@@ -86,6 +90,36 @@ body.tab-jf .chip-label{color:#A5D6A7;}
 .footer{text-align:center;color:rgba(255,255,255,.4);font-size:.78em;margin-top:16px;line-height:1.8;}
 @media(max-width:600px){.header h1{font-size:1.6em;}.section,.secret{padding:18px 13px;}.summary-row{grid-template-columns:1fr 1fr;}.tab-btn{font-size:.82em;padding:8px 14px;}}
 .secret-cb{background:linear-gradient(135deg,rgba(255,200,0,.15),rgba(255,100,50,.1));border:1px solid rgba(255,220,100,.3);}
+
+.codes-toolbar{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+.codes-search{position:relative;}
+.codes-search input{width:100%;padding:14px 16px 14px 44px;border-radius:14px;border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:white;font-size:.95em;font-family:'Nanum Gothic',sans-serif;backdrop-filter:blur(10px);outline:none;transition:all .25s;}
+.codes-search input:focus{border-color:rgba(130,177,255,.6);background:rgba(255,255,255,.12);box-shadow:0 0 0 4px rgba(130,177,255,.15);}
+.codes-search input::placeholder{color:rgba(255,255,255,.4);}
+.codes-search .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1.2em;opacity:.6;}
+.codes-filter{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{font-family:'Jua',sans-serif;font-size:.85em;padding:7px 16px;border-radius:30px;border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);cursor:pointer;transition:all .25s;}
+.filter-btn:hover{background:rgba(255,255,255,.15);}
+.filter-btn.active{background:linear-gradient(135deg,#3D5AFE,#82B1FF);color:white;border-color:#82B1FF;}
+.codes-count{font-size:.85em;color:rgba(255,255,255,.55);text-align:right;padding:4px 4px 0;}
+.codes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;}
+.code-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;transition:all .2s;}
+.code-card:hover{background:rgba(255,255,255,.13);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2);}
+.code-emoji{font-size:1.7em;flex-shrink:0;}
+.code-info{flex:1;min-width:0;}
+.code-name{font-family:'Jua',sans-serif;font-size:.95em;color:white;margin-bottom:2px;}
+.code-en{font-size:.74em;color:rgba(255,255,255,.5);}
+.code-action{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
+.code-number{font-family:'Jua',sans-serif;font-size:.95em;color:#82B1FF;letter-spacing:1px;font-variant-numeric:tabular-nums;}
+.code-copy{font-size:.7em;font-family:'Jua',sans-serif;background:rgba(130,177,255,.2);color:#BFD9FF;border:none;border-radius:8px;padding:3px 10px;cursor:pointer;transition:all .2s;font-family:'Nanum Gothic',sans-serif;font-weight:800;}
+.code-copy:hover{background:rgba(130,177,255,.4);color:white;}
+.code-copy.copied{background:rgba(134,239,172,.3);color:#86EFAC;}
+.cat-tag{display:inline-block;font-size:.7em;font-family:'Jua',sans-serif;padding:2px 8px;border-radius:8px;margin-right:6px;}
+.cat-food{background:rgba(252,165,165,.2);color:#FCA5A5;}
+.cat-snack{background:rgba(255,213,79,.2);color:#FCD34D;}
+.cat-plush{background:rgba(244,143,177,.2);color:#F8BBD0;}
+.cat-deco{background:rgba(196,181,253,.2);color:#C4B5FD;}
+.no-result{text-align:center;padding:40px 20px;color:rgba(255,255,255,.5);font-size:.9em;}
 </style>
 </head>
 <body class="tab-bw">
@@ -108,6 +142,7 @@ body.tab-jf .chip-label{color:#A5D6A7;}
     <button class="tab-btn" onclick="switchTab(this,'jf')">🌿 제이드 포레스트</button>
     <button class="tab-btn" onclick="switchTab(this,'cb')">🔗 교배표</button>
     <button class="tab-btn" onclick="switchTab(this,'guide')">📖 사용 가이드</button>
+    <button class="tab-btn" onclick="switchTab(this,'codes')">🛒 샵 코드</button>
   </div>
   <div id="panel-bw" class="tab-panel active">
     <div class="section">
@@ -668,6 +703,131 @@ body.tab-jf .chip-label{color:#A5D6A7;}
     </div>
 
   </div>
+  <!-- ══════════════════ 샵 코드 ══════════════════ -->
+  <div id="panel-codes" class="tab-panel">
+
+    <!-- 코드 입력 가이드 -->
+    <div class="section">
+      <div class="section-title">🛒 샵 코드 사용법</div>
+      <div style="background:rgba(130,177,255,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #82B1FF;font-size:.88em;color:rgba(255,255,255,.85);line-height:1.9;">
+        <strong style="color:#BFD9FF;">LAB(다이얼 꾹) → SHOP → SHOP CODE → 8자리 숫자 입력</strong><br>
+        <span style="color:rgba(255,255,255,.6);">코드 입력 = 아이템 해금. 실제 구매는 고치포인트 필요!<br>중복 입력해도 경고 없이 넘어가니 미리 다 넣어둬도 OK 👍</span>
+      </div>
+    </div>
+
+    <!-- 검색 & 필터 -->
+    <div class="section">
+      <div class="section-title">🔍 코드 검색 <span style="color:rgba(255,255,255,.5);font-size:.7em;">총 <span id="totalCount">0</span>개</span></div>
+      <div class="codes-toolbar">
+        <div class="codes-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="codeSearch" placeholder="아이템 이름이나 코드 번호로 검색... (한글/영문)" autocomplete="off">
+        </div>
+        <div class="codes-filter">
+          <button class="filter-btn active" data-cat="all" onclick="filterCat(this,'all')">전체</button>
+          <button class="filter-btn" data-cat="food" onclick="filterCat(this,'food')">🍱 음식</button>
+          <button class="filter-btn" data-cat="snack" onclick="filterCat(this,'snack')">🍭 간식</button>
+          <button class="filter-btn" data-cat="plush" onclick="filterCat(this,'plush')">🧸 인형</button>
+          <button class="filter-btn" data-cat="deco" onclick="filterCat(this,'deco')">🎨 꾸미기</button>
+        </div>
+        <div class="codes-count">표시: <span id="visibleCount">0</span>개</div>
+      </div>
+      <div id="codesGrid" class="codes-grid"></div>
+      <div id="noResult" class="no-result" style="display:none;">검색 결과가 없어요 🥲</div>
+    </div>
+
+  </div>
+
+<script>
+const CODES_DATA = [["food", "39357133", "카레라이스", "Curry rice", "🍛"], ["snack", "75736382", "도넛", "Donut", "🍩"], ["snack", "98139310", "음료", "Drink", "🥤"], ["food", "02407725", "만두", "Dumplings", "🥟"], ["food", "97587690", "감자튀김", "French fries", "🍟"], ["food", "96359340", "프라이드 치킨", "Fried chicken", "🍗"], ["deco", "75474286", "가챠퐁 머신", "Gachapon machine", "🎰"], ["food", "36636746", "갈레트", "Galette", "🫓"], ["snack", "69501027", "껌", "Gum", "🍬"], ["snack", "29671239", "구미", "Gummies", "🍇"], ["food", "36736895", "함박 스테이크", "Hamburg steak", "🥩"], ["food", "50951756", "햄버거 (1)", "Hamburger", "🍔"], ["food", "48192569", "햄버거 (2)", "Hamburger", "🍔"], ["deco", "94257857", "핸디 로켓", "Handy rocket", "🚀"], ["plush", "50563689", "호호치 인형", "Horhotchi plush", "🦉"], ["deco", "14853045", "호호치 날개", "Horhotchi wing", "🪽"], ["deco", "42107325", "뿔 머리띠", "Horns headband", "😈"], ["snack", "47100986", "아이스크림", "Ice cream", "🍦"], ["plush", "53741858", "이루카치 인형", "Irukatchi plush", "🐬"], ["deco", "46746507", "이루카치 모자", "Irukatchi hat", "🎩"], ["deco", "38072809", "잭인더박스", "Jack-in-the-box", "🎁"], ["deco", "64703405", "Jins 안경", "Jins glasses", "👓"], ["snack", "68527046", "주스", "Juice", "🧃"], ["plush", "05023839", "쿠치파치 인형", "Kutchipatchi plush", "🟢"], ["deco", "83012792", "랜턴", "Lantern", "🏮"], ["deco", "17556258", "잎사귀 왕관", "Leaf crown", "🌿"], ["deco", "10854756", "라이트 스틱", "Light stick", "💡"], ["deco", "20986445", "예쁜 리본", "Lovely ribbon", "🎀"], ["deco", "15265021", "잡지", "Magazine", "📕"], ["deco", "04015149", "학사모", "Academic cap", "🎓"], ["plush", "37519184", "베이비마루치 인형", "Babymarutchi plush", "🐣"], ["deco", "36795645", "풍선", "Balloons", "🎈"], ["deco", "17254563", "욕조", "Bathtub", "🛁"], ["food", "81364378", "바비큐", "BBQ", "🍖"], ["food", "63984717", "흑백 빵", "Black and white bread", "🍞"], ["food", "56852210", "흑백 햄버거", "Black and white burger", "🍔"], ["food", "95380547", "흑백 파이", "Black and white pie", "🥧"], ["food", "17928690", "볼로", "Bolo", "🟫"], ["deco", "45619639", "책", "Book", "📖"], ["food", "19162952", "빵", "Bread", "🥖"], ["deco", "05846935", "버스", "Bus", "🚌"], ["food", "02395469", "케이크", "Cake", "🍰"], ["snack", "28296085", "사탕", "Candy", "🍬"], ["snack", "62624154", "사탕 지팡이", "Candy cane", "🍭"], ["deco", "56439089", "핸드폰", "Cell phone", "📱"], ["deco", "93246348", "요리사 모자", "Chef hat", "👨‍🍳"], ["snack", "25058016", "초콜릿", "Chocolate", "🍫"], ["deco", "05672512", "크리스마스 트리", "Christmas tree", "🎄"], ["snack", "41624803", "커피", "Coffee", "☕"], ["snack", "52483361", "쿠키", "Cookie", "🍪"], ["snack", "67953812", "솜사탕", "Cotton candy", "🍡"], ["deco", "45980305", "요람", "Cradle", "🛏️"], ["deco", "07879620", "크레인 게임", "Crane game", "🎮"], ["food", "75261293", "크레페", "Crepe", "🥞"], ["food", "75324651", "컵라면", "Cup of noodles", "🍜"], ["deco", "49583258", "만화책", "Manga", "📚"], ["snack", "80435034", "마시멜로", "Marshmallows", "🍢"], ["plush", "68527158", "메메치 인형", "Memetchi plush", "🌟"], ["deco", "91610708", "미야오치 머리띠", "Meowtchi headband", "🐱"], ["plush", "43280105", "미야오치 인형", "Meowtchi plush", "🐱"], ["deco", "09597972", "후지산 모자", "Mt. Fuji hat", "🗻"], ["deco", "73595649", "버섯 모자", "Mushroom hat", "🍄"], ["food", "54175498", "파에야", "Paella", "🥘"], ["snack", "17390274", "파리파리 바", "Pari Pari bar", "🍫"], ["food", "85926587", "파스타", "Pasta", "🍝"], ["deco", "63854658", "펜", "Pen", "🖊️"], ["food", "76169252", "피자", "Pizza", "🍕"], ["deco", "50536071", "행성 반지", "Planet ring", "💍"], ["deco", "48753308", "매화 장식", "Plum blossom ornament", "🌸"], ["snack", "69246521", "감자칩", "Potato chips", "🥔"], ["deco", "97932010", "파우치", "Pouch", "👝"], ["deco", "35606107", "타마히코의 UFO", "Prince Tamahiko's UFO", "🛸"], ["snack", "47805804", "푸딩", "Pudding", "🍮"], ["deco", "95092619", "토끼 모자", "Rabbit hat", "🐰"], ["deco", "40796739", "무지개 아프로", "Rainbow Afro", "🌈"], ["food", "74858354", "라멘", "Ramen", "🍜"], ["food", "29140743", "주먹밥", "Rice ball", "🍙"], ["food", "70215275", "밥그릇", "Rice bowl", "🍚"], ["food", "26570348", "떡", "Rice cakes", "🍡"], ["food", "92093485", "샌드위치", "Sandwiches", "🥪"], ["deco", "59614767", "별똥별 머리띠", "Shooting star headband", "🌠"], ["deco", "47120784", "쇼핑 바구니", "Shopping basket", "🧺"], ["deco", "41282659", "쇼핑 카트", "Shopping cart", "🛒"], ["food", "72968763", "초밥", "Sushi", "🍣"], ["deco", "65730795", "미끄럼틀", "Slide", "🛝"], ["snack", "10937314", "스낵 컵", "Snack cup", "🍿"], ["snack", "65219015", "소다 캔디", "Soda candies", "🥤"], ["snack", "30601026", "소프트 아이스크림", "Soft serve", "🍦"], ["deco", "78594810", "솜브레로", "Sombrero", "👒"], ["deco", "74321867", "스탠딩 마이크", "Standing mic", "🎤"], ["snack", "68284514", "선데이", "Sundae", "🍨"], ["deco", "17351549", "그네", "Swing", "🪜"], ["food", "53684743", "타코", "Tacos", "🌮"], ["food", "45196041", "붕어빵", "Taitchiyaki", "🐟"], ["food", "02584861", "타코야키", "Takoyaki", "🐙"], ["deco", "78357605", "타마 백팩", "Tama backpack", "🎒"], ["deco", "37691894", "타마 중국 모자", "Tama Chinese hat", "👘"], ["deco", "94916269", "타마 파우치", "Tama pouch", "👛"], ["plush", "34671317", "다마고치 인형들", "Tamagotchi plushies", "🌈"], ["deco", "21052853", "타마버스 오브제", "Tamaverse object", "🪐"], ["deco", "13950475", "장난감 피아노", "Toy piano", "🎹"], ["deco", "82915952", "기차", "Train", "🚂"], ["deco", "04579676", "티셔츠", "T-shirt", "👕"], ["food", "53486788", "우동", "Udon", "🍜"], ["deco", "28520716", "우마히코 야외 장난감", "Umahiko outside toy", "🦄"], ["snack", "98783729", "웨이퍼", "Wafers", "🍪"], ["snack", "73623958", "화이트 초콜릿 마스코트", "White chocolate mascot", "⚪"], ["snack", "57653319", "요거트", "Yoghurt", "🥛"], ["food", "75417953", "유키노야도", "Yukinoyado", "❄️"]];
+const CAT_LABELS = {food:'음식',snack:'간식',plush:'인형',deco:'꾸미기'};
+const CAT_CLASSES = {food:'cat-food',snack:'cat-snack',plush:'cat-plush',deco:'cat-deco'};
+let currentCat = 'all';
+let currentQuery = '';
+
+function renderCodes() {
+  const grid = document.getElementById('codesGrid');
+  const noResult = document.getElementById('noResult');
+  const q = currentQuery.trim().toLowerCase();
+  
+  let filtered = CODES_DATA.filter(([cat, code, kr, en, emoji]) => {
+    if (currentCat !== 'all' && cat !== currentCat) return false;
+    if (q) {
+      return kr.toLowerCase().includes(q) || en.toLowerCase().includes(q) || code.includes(q.replace(/\s/g,''));
+    }
+    return true;
+  });
+  
+  // 카테고리 → 한글이름 정렬
+  filtered.sort((a, b) => {
+    if (a[0] !== b[0]) {
+      const order = {food:0, snack:1, plush:2, deco:3};
+      return order[a[0]] - order[b[0]];
+    }
+    return a[2].localeCompare(b[2], 'ko');
+  });
+  
+  document.getElementById('visibleCount').textContent = filtered.length;
+  
+  if (filtered.length === 0) {
+    grid.style.display = 'none';
+    noResult.style.display = 'block';
+    return;
+  }
+  grid.style.display = 'grid';
+  noResult.style.display = 'none';
+  
+  grid.innerHTML = filtered.map(([cat, code, kr, en, emoji]) => {
+    const fmt = code.slice(0,4) + ' ' + code.slice(4);
+    return `
+      <div class="code-card">
+        <span class="code-emoji">${emoji}</span>
+        <div class="code-info">
+          <div class="code-name"><span class="cat-tag ${CAT_CLASSES[cat]}">${CAT_LABELS[cat]}</span>${kr}</div>
+          <div class="code-en">${en}</div>
+        </div>
+        <div class="code-action">
+          <span class="code-number">${fmt}</span>
+          <button class="code-copy" onclick="copyCode(this,'${code}')">복사</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function filterCat(btn, cat) {
+  currentCat = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCodes();
+}
+
+function copyCode(btn, code) {
+  navigator.clipboard.writeText(code).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ 복사됨';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+  }).catch(() => {
+    // 폴백
+    const ta = document.createElement('textarea');
+    ta.value = code; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); ta.remove();
+    btn.textContent = '✓ 복사됨';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('totalCount').textContent = CODES_DATA.length;
+  document.getElementById('codeSearch').addEventListener('input', (e) => {
+    currentQuery = e.target.value;
+    renderCodes();
+  });
+  renderCodes();
+});
+</script>
+
   <div class="footer">
     이미지 출처: blog.naver.com/game_mayo &nbsp;·&nbsp; ⓒ Bandai — Tamagotchi Paradise 공식 제품
   </div>
