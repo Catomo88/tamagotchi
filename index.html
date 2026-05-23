@@ -119,7 +119,15 @@ body.tab-jf .chip-label{color:#A5D6A7;}
 .cat-snack{background:rgba(255,213,79,.2);color:#FCD34D;}
 .cat-plush{background:rgba(244,143,177,.2);color:#F8BBD0;}
 .cat-deco{background:rgba(196,181,253,.2);color:#C4B5FD;}
+.cat-char{background:rgba(255,180,80,.25);color:#FFD699;}
+.type-badge{display:inline-block;font-size:.65em;font-family:'Jua',sans-serif;padding:2px 7px;border-radius:6px;margin-right:5px;letter-spacing:.5px;}
+.type-shop{background:linear-gradient(135deg,#3D5AFE,#82B1FF);color:white;}
+.type-lab{background:linear-gradient(135deg,#FF6F00,#FFD54F);color:#1a0a00;}
 .no-result{text-align:center;padding:40px 20px;color:rgba(255,255,255,.5);font-size:.9em;}
+.code-note{font-size:.72em;color:rgba(255,255,255,.55);margin-top:3px;line-height:1.4;}
+.code-card-lab{background:rgba(255,180,80,.06);border-color:rgba(255,213,79,.2);}
+.code-card-lab:hover{background:rgba(255,180,80,.1);}
+.code-number-lab{color:#FFD54F !important;font-size:.85em !important;letter-spacing:.5px !important;}
 </style>
 </head>
 <body class="tab-bw">
@@ -708,10 +716,39 @@ body.tab-jf .chip-label{color:#A5D6A7;}
 
     <!-- 코드 입력 가이드 -->
     <div class="section">
-      <div class="section-title">🛒 샵 코드 사용법</div>
-      <div style="background:rgba(130,177,255,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #82B1FF;font-size:.88em;color:rgba(255,255,255,.85);line-height:1.9;">
-        <strong style="color:#BFD9FF;">LAB(다이얼 꾹) → SHOP → SHOP CODE → 8자리 숫자 입력</strong><br>
-        <span style="color:rgba(255,255,255,.6);">코드 입력 = 아이템 해금. 실제 구매는 고치포인트 필요!<br>중복 입력해도 경고 없이 넘어가니 미리 다 넣어둬도 OK 👍</span>
+      <div class="section-title">🔑 코드 종류 & 사용법</div>
+      
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+        <div style="background:rgba(130,177,255,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #82B1FF;font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">
+          <div style="font-family:'Jua',sans-serif;color:#BFD9FF;font-size:1em;margin-bottom:6px;">🛒 샵 코드 (Shop Code)</div>
+          <strong style="color:white;">LAB → SHOP → SHOP CODE</strong><br>
+          <span style="color:rgba(255,255,255,.6);font-size:.92em;">8자리 <strong>숫자</strong>만으로 구성<br>음식·간식·인형·꾸미기 아이템 해금<br>구매는 고치포인트 필요</span>
+        </div>
+        <div style="background:rgba(255,213,79,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #FFD54F;font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">
+          <div style="font-family:'Jua',sans-serif;color:#FFD699;font-size:1em;margin-bottom:6px;">🔬 랩 코드 (Lab Code)</div>
+          <strong style="color:white;">LAB → LAB LOG → MICROSCOPE → LAB CODE</strong><br>
+          <span style="color:rgba(255,255,255,.6);font-size:.92em;">8자리 <strong>영문+숫자</strong> 조합<br>캐릭터 정보 미리보기 (Tama Cell 힌트)<br>키울 수 없는 캐릭터면 고치포인트 보상</span>
+        </div>
+      </div>
+      
+      <div class="tip"><span class="tip-em">💡</span><span>중복 입력해도 경고 없이 넘어가요. 친구 기기에서 코드 받으면 미리 다 넣어둬도 OK 👍 랩 코드는 <strong>해당 캐릭터를 키울 수 없는 기기에 입력하면 그 대신 고치포인트를 줘요!</strong></span></div>
+    </div>
+
+    <!-- 새고기 안내 -->
+    <div class="section">
+      <div class="section-title">🍗 "새고기" 같은 특수 진화 음식 코드</div>
+      <div style="background:rgba(252,165,165,.1);border-radius:14px;padding:14px 16px;font-size:.86em;color:rgba(255,255,255,.85);line-height:1.85;border-left:4px solid #FCA5A5;">
+        "새고기로 진화시킨다"는 건 <strong style="color:#FDE68A;">하늘 필드(퍼플스카이) 파닥이 청소년</strong>이 먹는 닭고기 계열 음식이에요!<br><br>
+        🐦 <strong>파닥이 → 호호치(부엉이)/몽가치(코알라)/이글치(독수리)/밧치(박쥐)</strong> 진화에 필요:<br>
+        &nbsp;&nbsp;• <strong>96359340</strong> 프라이드 치킨 ⭐ (가장 추천)<br>
+        &nbsp;&nbsp;• 하늘치킨·큰하늘치킨·치킨스테이크 (게임 내 별도)<br><br>
+        🥩 <strong>육식 계열(으르렁 청소년)</strong> 진화 음식 코드:<br>
+        &nbsp;&nbsp;• <strong>81364378</strong> BBQ<br>
+        &nbsp;&nbsp;• <strong>36736895</strong> 함박 스테이크<br>
+        &nbsp;&nbsp;• <strong>50951756</strong> / <strong>48192569</strong> 햄버거<br>
+        &nbsp;&nbsp;• <strong>56852210</strong> 흑백 햄버거<br>
+        &nbsp;&nbsp;• <strong>53684743</strong> 타코<br><br>
+        <span style="color:rgba(255,255,255,.55);">※ 제이드 포레스트의 "차슈·베이징고기·벌레번" 같은 전용 고기 음식은 샵 코드로 해금 불가, 에그 헌트나 요리로만 획득!</span>
       </div>
     </div>
 
@@ -721,7 +758,7 @@ body.tab-jf .chip-label{color:#A5D6A7;}
       <div class="codes-toolbar">
         <div class="codes-search">
           <span class="search-icon">🔍</span>
-          <input type="text" id="codeSearch" placeholder="아이템 이름이나 코드 번호로 검색... (한글/영문)" autocomplete="off">
+          <input type="text" id="codeSearch" placeholder="아이템/캐릭터 이름이나 코드로 검색... (한글/영문)" autocomplete="off">
         </div>
         <div class="codes-filter">
           <button class="filter-btn active" data-cat="all" onclick="filterCat(this,'all')">전체</button>
@@ -729,6 +766,7 @@ body.tab-jf .chip-label{color:#A5D6A7;}
           <button class="filter-btn" data-cat="snack" onclick="filterCat(this,'snack')">🍭 간식</button>
           <button class="filter-btn" data-cat="plush" onclick="filterCat(this,'plush')">🧸 인형</button>
           <button class="filter-btn" data-cat="deco" onclick="filterCat(this,'deco')">🎨 꾸미기</button>
+          <button class="filter-btn" data-cat="lab" onclick="filterCat(this,'lab')">🔬 랩 코드</button>
         </div>
         <div class="codes-count">표시: <span id="visibleCount">0</span>개</div>
       </div>
@@ -739,9 +777,10 @@ body.tab-jf .chip-label{color:#A5D6A7;}
   </div>
 
 <script>
-const CODES_DATA = [["food", "39357133", "카레라이스", "Curry rice", "🍛"], ["snack", "75736382", "도넛", "Donut", "🍩"], ["snack", "98139310", "음료", "Drink", "🥤"], ["food", "02407725", "만두", "Dumplings", "🥟"], ["food", "97587690", "감자튀김", "French fries", "🍟"], ["food", "96359340", "프라이드 치킨", "Fried chicken", "🍗"], ["deco", "75474286", "가챠퐁 머신", "Gachapon machine", "🎰"], ["food", "36636746", "갈레트", "Galette", "🫓"], ["snack", "69501027", "껌", "Gum", "🍬"], ["snack", "29671239", "구미", "Gummies", "🍇"], ["food", "36736895", "함박 스테이크", "Hamburg steak", "🥩"], ["food", "50951756", "햄버거 (1)", "Hamburger", "🍔"], ["food", "48192569", "햄버거 (2)", "Hamburger", "🍔"], ["deco", "94257857", "핸디 로켓", "Handy rocket", "🚀"], ["plush", "50563689", "호호치 인형", "Horhotchi plush", "🦉"], ["deco", "14853045", "호호치 날개", "Horhotchi wing", "🪽"], ["deco", "42107325", "뿔 머리띠", "Horns headband", "😈"], ["snack", "47100986", "아이스크림", "Ice cream", "🍦"], ["plush", "53741858", "이루카치 인형", "Irukatchi plush", "🐬"], ["deco", "46746507", "이루카치 모자", "Irukatchi hat", "🎩"], ["deco", "38072809", "잭인더박스", "Jack-in-the-box", "🎁"], ["deco", "64703405", "Jins 안경", "Jins glasses", "👓"], ["snack", "68527046", "주스", "Juice", "🧃"], ["plush", "05023839", "쿠치파치 인형", "Kutchipatchi plush", "🟢"], ["deco", "83012792", "랜턴", "Lantern", "🏮"], ["deco", "17556258", "잎사귀 왕관", "Leaf crown", "🌿"], ["deco", "10854756", "라이트 스틱", "Light stick", "💡"], ["deco", "20986445", "예쁜 리본", "Lovely ribbon", "🎀"], ["deco", "15265021", "잡지", "Magazine", "📕"], ["deco", "04015149", "학사모", "Academic cap", "🎓"], ["plush", "37519184", "베이비마루치 인형", "Babymarutchi plush", "🐣"], ["deco", "36795645", "풍선", "Balloons", "🎈"], ["deco", "17254563", "욕조", "Bathtub", "🛁"], ["food", "81364378", "바비큐", "BBQ", "🍖"], ["food", "63984717", "흑백 빵", "Black and white bread", "🍞"], ["food", "56852210", "흑백 햄버거", "Black and white burger", "🍔"], ["food", "95380547", "흑백 파이", "Black and white pie", "🥧"], ["food", "17928690", "볼로", "Bolo", "🟫"], ["deco", "45619639", "책", "Book", "📖"], ["food", "19162952", "빵", "Bread", "🥖"], ["deco", "05846935", "버스", "Bus", "🚌"], ["food", "02395469", "케이크", "Cake", "🍰"], ["snack", "28296085", "사탕", "Candy", "🍬"], ["snack", "62624154", "사탕 지팡이", "Candy cane", "🍭"], ["deco", "56439089", "핸드폰", "Cell phone", "📱"], ["deco", "93246348", "요리사 모자", "Chef hat", "👨‍🍳"], ["snack", "25058016", "초콜릿", "Chocolate", "🍫"], ["deco", "05672512", "크리스마스 트리", "Christmas tree", "🎄"], ["snack", "41624803", "커피", "Coffee", "☕"], ["snack", "52483361", "쿠키", "Cookie", "🍪"], ["snack", "67953812", "솜사탕", "Cotton candy", "🍡"], ["deco", "45980305", "요람", "Cradle", "🛏️"], ["deco", "07879620", "크레인 게임", "Crane game", "🎮"], ["food", "75261293", "크레페", "Crepe", "🥞"], ["food", "75324651", "컵라면", "Cup of noodles", "🍜"], ["deco", "49583258", "만화책", "Manga", "📚"], ["snack", "80435034", "마시멜로", "Marshmallows", "🍢"], ["plush", "68527158", "메메치 인형", "Memetchi plush", "🌟"], ["deco", "91610708", "미야오치 머리띠", "Meowtchi headband", "🐱"], ["plush", "43280105", "미야오치 인형", "Meowtchi plush", "🐱"], ["deco", "09597972", "후지산 모자", "Mt. Fuji hat", "🗻"], ["deco", "73595649", "버섯 모자", "Mushroom hat", "🍄"], ["food", "54175498", "파에야", "Paella", "🥘"], ["snack", "17390274", "파리파리 바", "Pari Pari bar", "🍫"], ["food", "85926587", "파스타", "Pasta", "🍝"], ["deco", "63854658", "펜", "Pen", "🖊️"], ["food", "76169252", "피자", "Pizza", "🍕"], ["deco", "50536071", "행성 반지", "Planet ring", "💍"], ["deco", "48753308", "매화 장식", "Plum blossom ornament", "🌸"], ["snack", "69246521", "감자칩", "Potato chips", "🥔"], ["deco", "97932010", "파우치", "Pouch", "👝"], ["deco", "35606107", "타마히코의 UFO", "Prince Tamahiko's UFO", "🛸"], ["snack", "47805804", "푸딩", "Pudding", "🍮"], ["deco", "95092619", "토끼 모자", "Rabbit hat", "🐰"], ["deco", "40796739", "무지개 아프로", "Rainbow Afro", "🌈"], ["food", "74858354", "라멘", "Ramen", "🍜"], ["food", "29140743", "주먹밥", "Rice ball", "🍙"], ["food", "70215275", "밥그릇", "Rice bowl", "🍚"], ["food", "26570348", "떡", "Rice cakes", "🍡"], ["food", "92093485", "샌드위치", "Sandwiches", "🥪"], ["deco", "59614767", "별똥별 머리띠", "Shooting star headband", "🌠"], ["deco", "47120784", "쇼핑 바구니", "Shopping basket", "🧺"], ["deco", "41282659", "쇼핑 카트", "Shopping cart", "🛒"], ["food", "72968763", "초밥", "Sushi", "🍣"], ["deco", "65730795", "미끄럼틀", "Slide", "🛝"], ["snack", "10937314", "스낵 컵", "Snack cup", "🍿"], ["snack", "65219015", "소다 캔디", "Soda candies", "🥤"], ["snack", "30601026", "소프트 아이스크림", "Soft serve", "🍦"], ["deco", "78594810", "솜브레로", "Sombrero", "👒"], ["deco", "74321867", "스탠딩 마이크", "Standing mic", "🎤"], ["snack", "68284514", "선데이", "Sundae", "🍨"], ["deco", "17351549", "그네", "Swing", "🪜"], ["food", "53684743", "타코", "Tacos", "🌮"], ["food", "45196041", "붕어빵", "Taitchiyaki", "🐟"], ["food", "02584861", "타코야키", "Takoyaki", "🐙"], ["deco", "78357605", "타마 백팩", "Tama backpack", "🎒"], ["deco", "37691894", "타마 중국 모자", "Tama Chinese hat", "👘"], ["deco", "94916269", "타마 파우치", "Tama pouch", "👛"], ["plush", "34671317", "다마고치 인형들", "Tamagotchi plushies", "🌈"], ["deco", "21052853", "타마버스 오브제", "Tamaverse object", "🪐"], ["deco", "13950475", "장난감 피아노", "Toy piano", "🎹"], ["deco", "82915952", "기차", "Train", "🚂"], ["deco", "04579676", "티셔츠", "T-shirt", "👕"], ["food", "53486788", "우동", "Udon", "🍜"], ["deco", "28520716", "우마히코 야외 장난감", "Umahiko outside toy", "🦄"], ["snack", "98783729", "웨이퍼", "Wafers", "🍪"], ["snack", "73623958", "화이트 초콜릿 마스코트", "White chocolate mascot", "⚪"], ["snack", "57653319", "요거트", "Yoghurt", "🥛"], ["food", "75417953", "유키노야도", "Yukinoyado", "❄️"]];
-const CAT_LABELS = {food:'음식',snack:'간식',plush:'인형',deco:'꾸미기'};
-const CAT_CLASSES = {food:'cat-food',snack:'cat-snack',plush:'cat-plush',deco:'cat-deco'};
+const CODES_DATA = [["shop", "food", "39357133", "카레라이스", "Curry rice", "🍛", ""], ["shop", "snack", "75736382", "도넛", "Donut", "🍩", ""], ["shop", "snack", "98139310", "음료", "Drink", "🥤", ""], ["shop", "food", "02407725", "만두", "Dumplings", "🥟", ""], ["shop", "food", "97587690", "감자튀김", "French fries", "🍟", ""], ["shop", "food", "96359340", "프라이드 치킨", "Fried chicken", "🍗", ""], ["shop", "deco", "75474286", "가챠퐁 머신", "Gachapon machine", "🎰", ""], ["shop", "food", "36636746", "갈레트", "Galette", "🫓", ""], ["shop", "snack", "69501027", "껌", "Gum", "🍬", ""], ["shop", "snack", "29671239", "구미", "Gummies", "🍇", ""], ["shop", "food", "36736895", "함박 스테이크", "Hamburg steak", "🥩", ""], ["shop", "food", "50951756", "햄버거 (1)", "Hamburger", "🍔", ""], ["shop", "food", "48192569", "햄버거 (2)", "Hamburger", "🍔", ""], ["shop", "deco", "94257857", "핸디 로켓", "Handy rocket", "🚀", ""], ["shop", "plush", "50563689", "호호치 인형", "Horhotchi plush", "🦉", ""], ["shop", "deco", "14853045", "호호치 날개", "Horhotchi wing", "🪽", ""], ["shop", "deco", "42107325", "뿔 머리띠", "Horns headband", "😈", ""], ["shop", "snack", "47100986", "아이스크림", "Ice cream", "🍦", ""], ["shop", "plush", "53741858", "이루카치 인형", "Irukatchi plush", "🐬", ""], ["shop", "deco", "46746507", "이루카치 모자", "Irukatchi hat", "🎩", ""], ["shop", "deco", "38072809", "잭인더박스", "Jack-in-the-box", "🎁", ""], ["shop", "deco", "64703405", "Jins 안경", "Jins glasses", "👓", ""], ["shop", "snack", "68527046", "주스", "Juice", "🧃", ""], ["shop", "plush", "05023839", "쿠치파치 인형", "Kutchipatchi plush", "🟢", ""], ["shop", "deco", "83012792", "랜턴", "Lantern", "🏮", ""], ["shop", "deco", "17556258", "잎사귀 왕관", "Leaf crown", "🌿", ""], ["shop", "deco", "10854756", "라이트 스틱", "Light stick", "💡", ""], ["shop", "deco", "20986445", "예쁜 리본", "Lovely ribbon", "🎀", ""], ["shop", "deco", "15265021", "잡지", "Magazine", "📕", ""], ["shop", "deco", "04015149", "학사모", "Academic cap", "🎓", ""], ["shop", "plush", "37519184", "베이비마루치 인형", "Babymarutchi plush", "🐣", ""], ["shop", "deco", "36795645", "풍선", "Balloons", "🎈", ""], ["shop", "deco", "17254563", "욕조", "Bathtub", "🛁", ""], ["shop", "food", "81364378", "바비큐", "BBQ", "🍖", ""], ["shop", "food", "63984717", "흑백 빵", "Black and white bread", "🍞", ""], ["shop", "food", "56852210", "흑백 햄버거", "Black and white burger", "🍔", ""], ["shop", "food", "95380547", "흑백 파이", "Black and white pie", "🥧", ""], ["shop", "food", "17928690", "볼로", "Bolo", "🟫", ""], ["shop", "deco", "45619639", "책", "Book", "📖", ""], ["shop", "food", "19162952", "빵", "Bread", "🥖", ""], ["shop", "deco", "05846935", "버스", "Bus", "🚌", ""], ["shop", "food", "02395469", "케이크", "Cake", "🍰", ""], ["shop", "snack", "28296085", "사탕", "Candy", "🍬", ""], ["shop", "snack", "62624154", "사탕 지팡이", "Candy cane", "🍭", ""], ["shop", "deco", "56439089", "핸드폰", "Cell phone", "📱", ""], ["shop", "deco", "93246348", "요리사 모자", "Chef hat", "👨‍🍳", ""], ["shop", "snack", "25058016", "초콜릿", "Chocolate", "🍫", ""], ["shop", "deco", "05672512", "크리스마스 트리", "Christmas tree", "🎄", ""], ["shop", "snack", "41624803", "커피", "Coffee", "☕", ""], ["shop", "snack", "52483361", "쿠키", "Cookie", "🍪", ""], ["shop", "snack", "67953812", "솜사탕", "Cotton candy", "🍡", ""], ["shop", "deco", "45980305", "요람", "Cradle", "🛏️", ""], ["shop", "deco", "07879620", "크레인 게임", "Crane game", "🎮", ""], ["shop", "food", "75261293", "크레페", "Crepe", "🥞", ""], ["shop", "food", "75324651", "컵라면", "Cup of noodles", "🍜", ""], ["shop", "deco", "49583258", "만화책", "Manga", "📚", ""], ["shop", "snack", "80435034", "마시멜로", "Marshmallows", "🍢", ""], ["shop", "plush", "68527158", "메메치 인형", "Memetchi plush", "🌟", ""], ["shop", "deco", "91610708", "미야오치 머리띠", "Meowtchi headband", "🐱", ""], ["shop", "plush", "43280105", "미야오치 인형", "Meowtchi plush", "🐱", ""], ["shop", "deco", "09597972", "후지산 모자", "Mt. Fuji hat", "🗻", ""], ["shop", "deco", "73595649", "버섯 모자", "Mushroom hat", "🍄", ""], ["shop", "food", "54175498", "파에야", "Paella", "🥘", ""], ["shop", "snack", "17390274", "파리파리 바", "Pari Pari bar", "🍫", ""], ["shop", "food", "85926587", "파스타", "Pasta", "🍝", ""], ["shop", "deco", "63854658", "펜", "Pen", "🖊️", ""], ["shop", "food", "76169252", "피자", "Pizza", "🍕", ""], ["shop", "deco", "50536071", "행성 반지", "Planet ring", "💍", ""], ["shop", "deco", "48753308", "매화 장식", "Plum blossom ornament", "🌸", ""], ["shop", "snack", "69246521", "감자칩", "Potato chips", "🥔", ""], ["shop", "deco", "97932010", "파우치", "Pouch", "👝", ""], ["shop", "deco", "35606107", "타마히코의 UFO", "Prince Tamahiko's UFO", "🛸", ""], ["shop", "snack", "47805804", "푸딩", "Pudding", "🍮", ""], ["shop", "deco", "95092619", "토끼 모자", "Rabbit hat", "🐰", ""], ["shop", "deco", "40796739", "무지개 아프로", "Rainbow Afro", "🌈", ""], ["shop", "food", "74858354", "라멘", "Ramen", "🍜", ""], ["shop", "food", "29140743", "주먹밥", "Rice ball", "🍙", ""], ["shop", "food", "70215275", "밥그릇", "Rice bowl", "🍚", ""], ["shop", "food", "26570348", "떡", "Rice cakes", "🍡", ""], ["shop", "food", "92093485", "샌드위치", "Sandwiches", "🥪", ""], ["shop", "deco", "59614767", "별똥별 머리띠", "Shooting star headband", "🌠", ""], ["shop", "deco", "47120784", "쇼핑 바구니", "Shopping basket", "🧺", ""], ["shop", "deco", "41282659", "쇼핑 카트", "Shopping cart", "🛒", ""], ["shop", "food", "72968763", "초밥", "Sushi", "🍣", ""], ["shop", "deco", "65730795", "미끄럼틀", "Slide", "🛝", ""], ["shop", "snack", "10937314", "스낵 컵", "Snack cup", "🍿", ""], ["shop", "snack", "65219015", "소다 캔디", "Soda candies", "🥤", ""], ["shop", "snack", "30601026", "소프트 아이스크림", "Soft serve", "🍦", ""], ["shop", "deco", "78594810", "솜브레로", "Sombrero", "👒", ""], ["shop", "deco", "74321867", "스탠딩 마이크", "Standing mic", "🎤", ""], ["shop", "snack", "68284514", "선데이", "Sundae", "🍨", ""], ["shop", "deco", "17351549", "그네", "Swing", "🪜", ""], ["shop", "food", "53684743", "타코", "Tacos", "🌮", ""], ["shop", "food", "45196041", "붕어빵", "Taitchiyaki", "🐟", ""], ["shop", "food", "02584861", "타코야키", "Takoyaki", "🐙", ""], ["shop", "deco", "78357605", "타마 백팩", "Tama backpack", "🎒", ""], ["shop", "deco", "37691894", "타마 중국 모자", "Tama Chinese hat", "👘", ""], ["shop", "deco", "94916269", "타마 파우치", "Tama pouch", "👛", ""], ["shop", "plush", "34671317", "다마고치 인형들", "Tamagotchi plushies", "🌈", ""], ["shop", "deco", "21052853", "타마버스 오브제", "Tamaverse object", "🪐", ""], ["shop", "deco", "13950475", "장난감 피아노", "Toy piano", "🎹", ""], ["shop", "deco", "82915952", "기차", "Train", "🚂", ""], ["shop", "deco", "04579676", "티셔츠", "T-shirt", "👕", ""], ["shop", "food", "53486788", "우동", "Udon", "🍜", ""], ["shop", "deco", "28520716", "우마히코 야외 장난감", "Umahiko outside toy", "🦄", ""], ["shop", "snack", "98783729", "웨이퍼", "Wafers", "🍪", ""], ["shop", "snack", "73623958", "화이트 초콜릿 마스코트", "White chocolate mascot", "⚪", ""], ["shop", "snack", "57653319", "요거트", "Yoghurt", "🥛", ""], ["shop", "food", "75417953", "유키노야도", "Yukinoyado", "❄️", ""], ["lab", "char", "L5B4RUHL", "미미치", "Mimitchi", "🐭", "토끼치 닮은 회색 캐릭터"], ["lab", "char", "XKGDC0FX", "이루카치", "Irukatchi", "🐬", "블루워터 마스코트 (돌고래)"], ["lab", "char", "1EWR12VQ", "플라워치", "Furawatchi", "🌸", "핑크랜드 쑥쑥이 퍼펙트 성체"], ["lab", "char", "LW5JHHDB", "아홀로치", "Axolopatchi", "🦎", "블루워터 폴짝이 퍼펙트 성체"], ["lab", "char", "4RG89EWK", "미야오치", "Meowtchi", "🐱", "핑크랜드 으르렁 퍼펙트 성체"], ["lab", "char", "487V6CAU", "포치치", "Pochitchi", "🐶", "핑크랜드 강아지 성체"], ["lab", "char", "8E6XEDXR", "카와즈치", "Kawazutchi", "🐸", "블루워터 개구리 성체"], ["lab", "char", "Y536U3WA", "호호치", "Horhotchi", "🦉", "퍼플스카이 부엉이 퍼펙트 성체"], ["lab", "char", "K04B787H", "마메치", "Mametchi", "🐰", "핑크랜드 아장이 퍼펙트 성체"], ["lab", "char", "4S4GL6QN", "몽가치", "Mongatchi", "🐨", "퍼플스카이 코알라 성체"], ["lab", "char", "C1X9FUKR", "쿠치파치", "Kuchipatchi", "🟢", "제이드 포레스트 캐릭터"]];
+const CAT_LABELS = {food:'음식',snack:'간식',plush:'인형',deco:'꾸미기',char:'캐릭터'};
+const TYPE_LABELS = {shop:'샵 코드',lab:'랩 코드'};
+const CAT_CLASSES = {food:'cat-food',snack:'cat-snack',plush:'cat-plush',deco:'cat-deco',char:'cat-char'};
 let currentCat = 'all';
 let currentQuery = '';
 
@@ -750,21 +789,24 @@ function renderCodes() {
   const noResult = document.getElementById('noResult');
   const q = currentQuery.trim().toLowerCase();
   
-  let filtered = CODES_DATA.filter(([cat, code, kr, en, emoji]) => {
-    if (currentCat !== 'all' && cat !== currentCat) return false;
+  let filtered = CODES_DATA.filter(([type, cat, code, kr, en, emoji, note]) => {
+    if (currentCat === 'lab') { if (type !== 'lab') return false; }
+    else if (currentCat !== 'all' && cat !== currentCat) return false;
     if (q) {
-      return kr.toLowerCase().includes(q) || en.toLowerCase().includes(q) || code.includes(q.replace(/\s/g,''));
+      const Q = q.toLowerCase();
+      return kr.toLowerCase().includes(Q) || en.toLowerCase().includes(Q) || code.toLowerCase().includes(Q.replace(/\s/g,'')) || (note && note.toLowerCase().includes(Q));
     }
     return true;
   });
   
   // 카테고리 → 한글이름 정렬
   filtered.sort((a, b) => {
-    if (a[0] !== b[0]) {
-      const order = {food:0, snack:1, plush:2, deco:3};
-      return order[a[0]] - order[b[0]];
+    if (a[0] !== b[0]) return a[0] === 'lab' ? 1 : -1;
+    if (a[1] !== b[1]) {
+      const order = {food:0, snack:1, plush:2, deco:3, char:4};
+      return order[a[1]] - order[b[1]];
     }
-    return a[2].localeCompare(b[2], 'ko');
+    return a[3].localeCompare(b[3], 'ko');
   });
   
   document.getElementById('visibleCount').textContent = filtered.length;
@@ -777,17 +819,21 @@ function renderCodes() {
   grid.style.display = 'grid';
   noResult.style.display = 'none';
   
-  grid.innerHTML = filtered.map(([cat, code, kr, en, emoji]) => {
-    const fmt = code.slice(0,4) + ' ' + code.slice(4);
+  grid.innerHTML = filtered.map(([type, cat, code, kr, en, emoji, note]) => {
+    const isLab = type === 'lab';
+    const fmt = isLab ? code : (code.slice(0,4) + ' ' + code.slice(4));
+    const typeBadge = `<span class="type-badge type-${type}">${TYPE_LABELS[type]}</span>`;
+    const noteHtml = note ? `<div class="code-note">${note}</div>` : '';
     return `
-      <div class="code-card">
+      <div class="code-card ${isLab?'code-card-lab':''}">
         <span class="code-emoji">${emoji}</span>
         <div class="code-info">
-          <div class="code-name"><span class="cat-tag ${CAT_CLASSES[cat]}">${CAT_LABELS[cat]}</span>${kr}</div>
+          <div class="code-name">${typeBadge}<span class="cat-tag ${CAT_CLASSES[cat]}">${CAT_LABELS[cat]}</span>${kr}</div>
           <div class="code-en">${en}</div>
+          ${noteHtml}
         </div>
         <div class="code-action">
-          <span class="code-number">${fmt}</span>
+          <span class="code-number ${isLab?'code-number-lab':''}">${fmt}</span>
           <button class="code-copy" onclick="copyCode(this,'${code}')">복사</button>
         </div>
       </div>`;
