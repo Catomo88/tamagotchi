@@ -156,10 +156,10 @@ const CHARS = {
 
 /* 성체 4단계 — 케어미스 기준 */
 const TIERS = [
-  { key:'perfect', label:'퍼펙트 케어',  cls:'cb0',  desc:'케어미스 0 + 🍙🩷 각 5개↑' },
-  { key:'t1',      label:'케어미스 0~1', cls:'cb1',  desc:'거의 완벽하게 돌봄' },
-  { key:'t25',     label:'케어미스 2~5', cls:'cb25', desc:'가끔 놓침' },
-  { key:'t6',      label:'케어미스 6+',  cls:'cb6',  desc:'자주 놓침' }
+  { key:'perfect', label:'퍼펙트 케어',  short:'퍼펙트',   cls:'cb0',  desc:'케어미스 0 + 🍙🩷 각 5개↑' },
+  { key:'t1',      label:'케어미스 0~1', short:'미스 0~1', cls:'cb1',  desc:'거의 완벽하게 돌봄' },
+  { key:'t25',     label:'케어미스 2~5', short:'미스 2~5', cls:'cb25', desc:'가끔 놓침' },
+  { key:'t6',      label:'케어미스 6+',  short:'미스 6+',  cls:'cb6',  desc:'자주 놓침' }
 ];
 
 /* 버전별 진화 데이터

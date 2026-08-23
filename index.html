@@ -20,6 +20,7 @@ body.tab-wg{background:linear-gradient(180deg,#0C1E33 0%,#3B6EA5 35%,#3073A3 65%
 body.tab-cb{background:linear-gradient(180deg,#050014 0%,#0D0030 30%,#1A0050 60%,#2D0070 100%);}
 body.tab-guide{background:linear-gradient(180deg,#1C1008 0%,#3E2000 35%,#5D3A00 65%,#8B5E00 100%);}
 body.tab-codes{background:linear-gradient(180deg,#0A0F1F 0%,#1A2547 30%,#2D3B6E 60%,#5B6FB8 100%);}
+body.tab-dex{background:linear-gradient(180deg,#12131C 0%,#2A2D3F 35%,#3A3B52 65%,#2E2F44 100%);}
 body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;transition:background 0.6s;}
 body.tab-bw::before{background:radial-gradient(ellipse at 20% 30%,rgba(66,165,245,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(128,222,234,.1) 0%,transparent 50%);}
 body.tab-pk::before{background:radial-gradient(ellipse at 20% 30%,rgba(255,100,150,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(255,200,220,.1) 0%,transparent 50%);}
@@ -30,6 +31,7 @@ body.tab-wg::before{background:radial-gradient(ellipse at 25% 30%,rgba(180,220,2
 body.tab-cb::before{background:radial-gradient(ellipse at 30% 40%,rgba(100,50,255,.2) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(255,200,50,.1) 0%,transparent 50%);}
 body.tab-guide::before{background:radial-gradient(ellipse at 25% 35%,rgba(255,180,50,.12) 0%,transparent 50%),radial-gradient(ellipse at 75% 65%,rgba(255,140,0,.08) 0%,transparent 50%);}
 body.tab-codes::before{background:radial-gradient(ellipse at 30% 30%,rgba(120,150,255,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 70%,rgba(200,200,255,.08) 0%,transparent 50%);}
+body.tab-dex::before{background:radial-gradient(ellipse at 28% 32%,rgba(255,215,140,.12) 0%,transparent 50%),radial-gradient(ellipse at 72% 68%,rgba(190,200,255,.09) 0%,transparent 50%);}
 .bubble{position:fixed;border-radius:50%;animation:rise linear infinite;pointer-events:none;z-index:0;
   transition:background 0.6s;box-shadow:inset 0 0 6px rgba(255,255,255,.25);}
 body.tab-bw .bubble{background:rgba(255,255,255,.14);}
@@ -41,6 +43,7 @@ body.tab-wg .bubble{background:rgba(255,255,255,.26);}
 body.tab-cb .bubble{background:rgba(255,255,200,.19);}
 body.tab-guide .bubble{background:rgba(255,200,100,.16);}
 body.tab-codes .bubble{background:rgba(200,220,255,.17);}
+body.tab-dex .bubble{background:rgba(255,225,170,.16);}
 @keyframes rise{0%{transform:translateY(100vh) scale(0);opacity:0;}50%{opacity:1;}100%{transform:translateY(-10vh) scale(1);opacity:0;}}
 .container{max-width:900px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1;}
 .header{text-align:center;padding:40px 0 28px;animation:fadeDown .8s ease;}
@@ -59,6 +62,7 @@ body.tab-codes .bubble{background:rgba(200,220,255,.17);}
 .tab-btn.active-cb{background:linear-gradient(135deg,#FFD700,#FF8C00);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,200,50,.4);}
 .tab-btn.active-guide{background:linear-gradient(135deg,#FF8C00,#FFD700);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,160,0,.4);}
 .tab-btn.active-codes{background:linear-gradient(135deg,#3D5AFE,#82B1FF);border-color:#82B1FF;color:white;box-shadow:0 4px 18px rgba(130,177,255,.4);}
+.tab-btn.active-dex{background:linear-gradient(135deg,#8D6E3A,#E0BE7A);border-color:#E0BE7A;color:#1d1608;box-shadow:0 4px 18px rgba(224,190,122,.4);}
 .tab-panel{display:none;animation:fadeUp .4s ease;}
 .tab-panel.active{display:block;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
@@ -164,9 +168,9 @@ body.tab-wg .chip-label{color:#BFDBFE;}
   .tb-short{display:inline;}
 }
 @media(max-width:360px){
-  .tab-bar{gap:3px;padding:8px 6px;}
-  .tab-btn{font-size:.67em;padding:5px 7px;}
-  .tab-bar.stuck .tab-btn{font-size:.65em;padding:4px 6px;}
+  .tab-bar{gap:3px;padding:8px 4px;}
+  .tab-btn{font-size:.63em;padding:4px 6px;}
+  .tab-bar.stuck .tab-btn{font-size:.61em;padding:4px 5px;}
 }
 
 /* 2. 섹션 점프 네비게이션 */
@@ -325,7 +329,11 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 @media(max-width:640px){
   .evo-thead{display:none;}
   .evo-trow{grid-template-columns:1fr;gap:8px;margin-bottom:16px;}
-  .evo-cells{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .evo-cells{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;}
+  .evo-cell .evo-thumb{max-width:48px;}
+  .evo-cell .evo-nm{font-size:.68em;}
+  .evo-cell .evo-jp{display:none;}
+  .evo-cell .evo-card{padding:5px 2px 4px;}
   .evo-rh{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;
     padding:6px 12px 6px 6px;}
   .evo-rh>.evo-card{width:auto;flex:0 0 auto;padding:2px;}
@@ -333,7 +341,7 @@ body.tab-wg .chip-label{color:#BFDBFE;}
   .evo-rh .evo-nm{font-size:.95em;}
   .evo-rh .evo-jp{display:none;}
   .evo-rh-food{margin-left:auto;font-size:.78em;}
-  .evo-tier{display:block;margin:8px auto 0;}
+  .evo-tier{display:block;margin:7px auto 0;font-size:.62em;padding:2px 6px;}
   .evo-cell{flex-direction:column-reverse;align-items:center;padding-bottom:8px;}
   .evo-cell .evo-tag{display:none;}
   .evo-jp{font-size:.6em;}
@@ -413,6 +421,7 @@ body.tab-wg .chip-label{color:#BFDBFE;}
     <button class="tab-btn" onclick="switchTab(this,'ot')"><span class="tb-full">🌴 오렌지 트로픽스</span><span class="tb-short">🌴 트로픽스</span></button>
     <button class="tab-btn" onclick="switchTab(this,'wg')"><span class="tb-full">❄️ 화이트 글래시어</span><span class="tb-short">❄️ 글래시어</span></button>
     <button class="tab-btn" onclick="switchTab(this,'cb')"><span class="tb-full">🔗 교배표</span><span class="tb-short">🔗 교배</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'dex')"><span class="tb-full">📕 캐릭터 도감</span><span class="tb-short">📕 도감</span></button>
     <button class="tab-btn" onclick="switchTab(this,'guide')"><span class="tb-full">📖 사용 가이드</span><span class="tb-short">📖 가이드</span></button>
     <button class="tab-btn" onclick="switchTab(this,'codes')"><span class="tb-full">🛒 샵 코드</span><span class="tb-short">🛒 코드</span></button>
   </div>
@@ -433,11 +442,7 @@ body.tab-wg .chip-label{color:#BFDBFE;}
   <div id="panel-cb" class="tab-panel">
 
     <!-- 전체 교배 차트 -->
-    <div class="section">
-      <div class="section-title">🗺️ 전체 캐릭터 도감 <span class="pill" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#1a0a00;">6버전 한눈에</span></div>
-      <p style="color:rgba(255,255,255,.7);font-size:.85em;margin-bottom:14px;">버전별로 아기부터 성체·비밀 캐릭터까지 전부 모았어요. 누르면 크게 볼 수 있어요.</p>
-      <div class="dex"></div>
-    </div>
+    
 
     <!-- 교배 방법 설명 -->
     <div class="section">
@@ -566,6 +571,15 @@ body.tab-wg .chip-label{color:#BFDBFE;}
       </div>
     </div>
 
+  </div>
+
+  <!-- ══════════════════ 캐릭터 도감 ══════════════════ -->
+  <div id="panel-dex" class="tab-panel">
+    <div class="section">
+      <div class="section-title">🗺️ 전체 캐릭터 도감 <span class="pill" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#1a0a00;">6버전 한눈에</span></div>
+      <p style="color:rgba(255,255,255,.7);font-size:.85em;margin-bottom:14px;">버전별로 아기부터 성체·비밀 캐릭터까지 전부 모았어요. 누르면 크게 볼 수 있어요.</p>
+      <div class="dex"></div>
+    </div>
   </div>
   <div id="panel-guide" class="tab-panel">
 
@@ -1128,8 +1142,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js?v=20260823d"></script>
-<script src="evo-render.js?v=20260823d"></script>
+<script src="evo-data.js?v=20260823e"></script>
+<script src="evo-render.js?v=20260823e"></script>
 <script>
 var CURRENT_TAB = 'bw';
 

@@ -86,7 +86,7 @@ function renderEvo(key) {
     h +=   '<div class="evo-cells">';
     y.a.forEach(function (aid, i) {
       h += '<div class="evo-cell' + (i === 0 ? ' evo-cell-best' : '') + '">' +
-             '<span class="evo-tier cb ' + TIERS[i].cls + '">' + TIERS[i].label + '</span>' +
+             '<span class="evo-tier cb ' + TIERS[i].cls + '">' + TIERS[i].short + '</span>' +
              evoCard(aid, i === 0 ? { tag: '최고', tagCls: 'evo-tag-best' } : {}) +
            '</div>';
     });
