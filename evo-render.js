@@ -150,3 +150,63 @@ function buildEvoCharts() {
     if (card) evoDetail(card.dataset.id);
   });
 }
+
+/* ============================================================
+   전체 캐릭터 도감 — 6버전 전부를 한 판에
+   ============================================================ */
+function dexCard(id, stage, stageCls) {
+  return '<button class="dex-card ' + stageCls + '" data-id="' + id + '">' +
+           '<img class="dex-thumb" src="' + evoImg(id) + '" alt="' + evoKo(id) + '" loading="lazy">' +
+           '<span class="dex-nm">' + evoKo(id) + '</span>' +
+           '<span class="dex-stage">' + stage + '</span>' +
+         '</button>';
+}
+
+function renderDex() {
+  var h = '';
+
+  h += '<div class="dex-block">' +
+         '<div class="dex-head"><span class="dex-head-nm">🥚 모든 버전 공통</span>' +
+         '<span class="dex-head-ct">2종</span></div>' +
+         '<div class="dex-grid">' +
+           dexCard(500, '아기', 'dex-baby') +
+           dexCard(516, '방치', 'dex-baby') +
+         '</div>' +
+         '<div class="dex-note">아기를 4시간 동안 돌보지 않으면 빅베이비 마루치가 되고, 더는 자라지 않아요.</div>' +
+       '</div>';
+
+  Object.keys(VERSIONS).forEach(function (key) {
+    var v = VERSIONS[key];
+    var ids = [];
+    ids.push([v.kids, '키즈', 'dex-kid']);
+    v.youngs.forEach(function (y) { ids.push([y.id, '청소년', 'dex-young']); });
+    v.youngs.forEach(function (y) {
+      y.a.forEach(function (aid, i) {
+        if (aid != null) ids.push([aid, i === 0 ? '성체·최고' : '성체', i === 0 ? 'dex-best' : 'dex-adult']);
+      });
+    });
+    ids.push([v.secret, '비밀', 'dex-secret']);
+
+    h += '<div class="dex-block dex-' + key + '">' +
+           '<div class="dex-head"><span class="dex-head-nm">' + v.emoji + ' ' + v.name + '</span>' +
+           '<span class="dex-head-fd">' + v.field + '</span>' +
+           '<span class="dex-head-ct">' + ids.length + '종</span></div>' +
+           '<div class="dex-grid">' +
+             ids.map(function (r) { return dexCard(r[0], r[1], r[2]); }).join('') +
+           '</div>' +
+         '</div>';
+  });
+  return h;
+}
+
+function buildDex() {
+  document.querySelectorAll('.dex').forEach(function (el) {
+    if (el.dataset.built) return;
+    el.innerHTML = renderDex();
+    el.dataset.built = '1';
+  });
+  document.addEventListener('click', function (e) {
+    var c = e.target.closest('.dex-card[data-id]');
+    if (c) evoDetail(c.dataset.id);
+  });
+}
