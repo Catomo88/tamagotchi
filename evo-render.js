@@ -72,22 +72,28 @@ function renderEvo(key) {
   h += '<div class="evo-sec">';
   h += '<div class="evo-h"><span class="evo-h-num">3</span>성체 진화표' +
        '<span class="evo-h-sub">가로 = 돌본 정도 · 세로 = 청소년 계열</span></div>';
-  h += '<div class="evo-scroll"><div class="evo-grid">';
-  h += '<div class="evo-corner">청소년 ＼ 케어</div>';
+  h += '<div class="evo-table">';
+  h += '<div class="evo-thead"><div class="evo-corner">청소년 ＼ 케어</div>';
   TIERS.forEach(function (t) {
     h += '<div class="evo-th"><span class="cb ' + t.cls + '">' + t.label + '</span>' +
          '<span class="evo-th-desc">' + t.desc + '</span></div>';
   });
+  h += '</div>';
   v.youngs.forEach(function (y) {
-    h += '<div class="evo-rh">' + evoCard(y.id, { cls: 'evo-sm' }) +
-         '<span class="evo-rh-food">' + y.food + '</span></div>';
+    h += '<div class="evo-trow">';
+    h +=   '<div class="evo-rh">' + evoCard(y.id, { cls: 'evo-sm' }) +
+             '<span class="evo-rh-food">' + y.food + '</span></div>';
+    h +=   '<div class="evo-cells">';
     y.a.forEach(function (aid, i) {
       h += '<div class="evo-cell' + (i === 0 ? ' evo-cell-best' : '') + '">' +
+             '<span class="evo-tier cb ' + TIERS[i].cls + '">' + TIERS[i].label + '</span>' +
              evoCard(aid, i === 0 ? { tag: '최고', tagCls: 'evo-tag-best' } : {}) +
            '</div>';
     });
+    h +=   '</div>';
+    h += '</div>';
   });
-  h += '</div></div>';
+  h += '</div>';
   if (v.note) h += '<div class="evo-note-line evo-note-warn">ℹ️ ' + v.note + '</div>';
   h += '</div>';
 

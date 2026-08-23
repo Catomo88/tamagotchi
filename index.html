@@ -120,8 +120,8 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .code-emoji{font-size:1.7em;flex-shrink:0;}
 .code-icon{width:44px;height:44px;object-fit:contain;flex-shrink:0;border-radius:8px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.15);}
 .code-info{flex:1;min-width:0;}
-.code-name{font-family:'Jua',sans-serif;font-size:.95em;color:white;margin-bottom:2px;}
-.code-en{font-size:.74em;color:rgba(255,255,255,.5);}
+.code-name{font-family:'Jua',sans-serif;font-size:.95em;color:white;margin-bottom:2px;overflow-wrap:anywhere;}
+.code-en{font-size:.74em;color:rgba(255,255,255,.5);overflow-wrap:anywhere;}
 .code-action{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
 .code-number{font-family:'Jua',sans-serif;font-size:.95em;color:#82B1FF;letter-spacing:1px;font-variant-numeric:tabular-nums;}
 .code-copy{font-size:.7em;font-family:'Jua',sans-serif;background:rgba(130,177,255,.2);color:#BFD9FF;border:none;border-radius:8px;padding:3px 10px;cursor:pointer;transition:all .2s;font-family:'Nanum Gothic',sans-serif;font-weight:800;}
@@ -278,8 +278,11 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .evo-food-i{font-size:.72em;color:rgba(255,255,255,.6);line-height:1.45;word-break:keep-all;}
 
 /* 3. 성체 4x4 */
-.evo-scroll{overflow-x:auto;scrollbar-width:thin;padding-bottom:4px;}
-.evo-grid{display:grid;grid-template-columns:118px repeat(4,minmax(112px,1fr));gap:7px;min-width:640px;}
+.evo-table{display:block;}
+.evo-thead{display:grid;grid-template-columns:118px repeat(4,minmax(0,1fr));gap:7px;margin-bottom:7px;}
+.evo-trow{display:grid;grid-template-columns:118px minmax(0,1fr);gap:7px;margin-bottom:7px;}
+.evo-cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;}
+.evo-tier{display:none;}
 .evo-corner{font-size:.68em;color:rgba(255,255,255,.4);display:flex;align-items:flex-end;
   padding:0 0 8px 2px;font-family:'Jua',sans-serif;}
 .evo-th{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 4px;text-align:center;}
@@ -307,6 +310,32 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .evo-note-line b{color:rgba(255,255,255,.92);}
 .evo-note-warn{background:rgba(255,213,79,.1);border:1px solid rgba(255,213,79,.24);}
 
+
+/* 좁은 화면 : 성체표를 계열별로 쌓고 2x2 로 */
+@media(max-width:640px){
+  .evo-thead{display:none;}
+  .evo-trow{grid-template-columns:1fr;gap:8px;margin-bottom:16px;}
+  .evo-cells{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .evo-rh{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;
+    padding:6px 12px 6px 6px;}
+  .evo-rh>.evo-card{width:auto;flex:0 0 auto;padding:2px;}
+  .evo-rh .evo-thumb{max-width:46px;}
+  .evo-rh .evo-nm{font-size:.95em;}
+  .evo-rh .evo-jp{display:none;}
+  .evo-rh-food{margin-left:auto;font-size:.78em;}
+  .evo-tier{display:block;margin:8px auto 0;}
+  .evo-cell{flex-direction:column-reverse;align-items:center;padding-bottom:8px;}
+  .evo-cell .evo-tag{display:none;}
+  .evo-jp{font-size:.6em;}
+  /* 좁은 화면에서 최소폭 때문에 넘치는 그리드들 */
+  .codes-grid{grid-template-columns:1fr;}
+  .evo-foods{grid-template-columns:1fr;}
+  .summary-row{grid-template-columns:1fr;}
+  /* 바로가기 칩 : 가로 스크롤 대신 줄바꿈 */
+  .jump-nav{flex-wrap:wrap;overflow-x:visible;}
+  .jump-chip{font-size:.72em;padding:5px 10px;}
+  .jump-nav-label{width:100%;margin-bottom:2px;}
+}
 @media(max-width:600px){
   .evo-sec{padding:16px 12px;border-radius:20px;}
   .evo-h{font-size:1.02em;}
@@ -1059,8 +1088,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js"></script>
-<script src="evo-render.js"></script>
+<script src="evo-data.js?v=20260823b"></script>
+<script src="evo-render.js?v=20260823b"></script>
 <script>
 var CURRENT_TAB = 'bw';
 
