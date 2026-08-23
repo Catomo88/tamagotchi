@@ -51,13 +51,19 @@ function renderEvo(key) {
   h += '<div class="evo-branch">⬇ 어린이 때 <b>가장 많이 먹인 먹이</b>에 따라 4갈래로 갈려요</div>';
   h += '<div class="evo-fan">';
   v.youngs.forEach(function (y) {
+    var sp = y.spot && SPOTS[y.spot];
     h += '<div class="evo-fan-item">' +
            evoCard(y.id) +
            '<span class="evo-fan-k">' + y.food + '</span>' +
            '<span class="evo-fan-i">' + y.items + '</span>' +
+           (sp ? '<span class="evo-spot ' + sp.cls + '">' + sp.emoji + ' ' + sp.label + '</span>'
+               : '<span class="evo-spot spot-any">아무거나 골고루</span>') +
          '</div>';
   });
   h += '</div>';
+  h += '<div class="evo-note-line">🥚 먹이는 <b>' + v.field + ' 필드의 에그 헌트</b>에서 주워요. ' +
+       '위 표시는 그 먹이가 나오는 곳이에요. ' +
+       '같은 계열 <b>요리·간식</b>을 먹여도 같은 쪽으로 자랍니다.</div>';
   h += '</div>';
 
   /* ---- 2) 성체 4x4 ---- */
