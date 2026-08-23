@@ -656,12 +656,13 @@ body.tab-wg .chip-label{color:#BFDBFE;}
           </div>
         </div>
         <div style="background:rgba(252,211,77,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #FCD34D;">
-          <div style="font-family:'Jua',sans-serif;color:#FCD34D;font-size:1em;margin-bottom:6px;">&#129303; 어린이 시기 필드 이동 시 일어나는 일</div>
+          <div style="font-family:'Jua',sans-serif;color:#FCD34D;font-size:1em;margin-bottom:6px;">&#129303; 필드를 옮기면 일어나는 일</div>
           <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.85;">
-            &bull; 다른 필드로 이동하면 원래 키드 정체성은 <strong>유지</strong>되면서 새 필드의 속성(세포)이 <strong>혼합</strong>돼요!<br>
-            &nbsp;&nbsp;(예: 물 키드 &rarr; 하늘 필드 이동 &rarr; <strong style="color:#FDE68A;">물 키드 + 하늘 속성</strong>이 합쳐짐)<br>
-            &bull; 청소년으로 성장 시 <strong>외형도 혼합체</strong>로! (예: 물 키드 베이스에 날개가 달리는 등)<br>
-            &bull; 이 혼합 외형은 유전되기 때문에 <strong>유니크한 외모의 자손</strong>을 만들 수 있어요!
+            &bull; 머무는 필드의 <strong>속성 세포</strong>가 쌓여요. 한 속성이 <strong>4개</strong> 모이면 그 속성의 키즈로 자라요<br>
+            &nbsp;&nbsp;(예: 물 속성 4개 &rarr; <strong style="color:#FDE68A;">미즈 키즈</strong>)<br>
+            &bull; 필드를 옮기면 <strong>쌓이는 속성이 바뀌어요</strong> &mdash; 아직 4개가 안 찼다면 다른 속성으로 방향을 틀 수 있어요<br>
+            &bull; 여러 속성이 섞여도 <strong>섞인 모습이 되지는 않아요.</strong> 결국 <strong>4개를 먼저 채운 속성 하나</strong>로 정해져요<br>
+            <span style="color:rgba(255,255,255,.55);">&#9888;&#65039; 지느러미&middot;날개 같은 몸의 형태는 <strong>종족</strong>에 딸린 것이라, 필드를 섞어서 새로 붙이거나 자손에게 물려줄 수 없어요. 교배로 넘어가는 건 눈 모양과 몸 색깔뿐이에요.</span>
           </div>
         </div>
         <div style="background:rgba(206,147,216,.1);border-radius:14px;padding:14px 16px;border-left:4px solid #CE93D8;">
@@ -672,7 +673,7 @@ body.tab-wg .chip-label{color:#BFDBFE;}
           </div>
         </div>
       </div>
-      <div class="tip"><span class="tip-em">&#127919;</span><span>순수 필드 캐릭터를 원하면 <strong>해당 필드에서만</strong> 키우세요. 혼합 외형의 유니크한 캐릭터를 원하면 <strong>일부러 다른 필드를 경험</strong>시켜보세요! 극단적으로 섞으면 빅베이비마루치 도전!</span></div>
+      <div class="tip"><span class="tip-em">&#127919;</span><span>원하는 키즈가 정해져 있다면 <strong>그 필드에서만</strong> 키우세요. 아직 속성이 덜 찼을 때 마음이 바뀌면 필드를 옮겨 <strong>방향을 틀 수</strong> 있고, 아예 아무 속성도 안 붙이고 버티면 <strong>빅베이비마루치</strong>에 도전할 수 있어요!</span></div>
     </div>
 
     <!-- 에그 헌트 -->
@@ -1202,8 +1203,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js?v=20260824a"></script>
-<script src="evo-render.js?v=20260824a"></script>
+<script src="evo-data.js?v=20260824b"></script>
+<script src="evo-render.js?v=20260824b"></script>
 <script>
 var CURRENT_TAB = 'bw';
 
