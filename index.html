@@ -11,12 +11,12 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Nanum Gothic',sans-serif;min-height:100vh;transition:background 0.6s;}
-body.tab-bw{background:linear-gradient(180deg,#0D1B3E 0%,#1565C0 40%,#0288D1 70%,#26C6DA 100%);}
-body.tab-pk{background:linear-gradient(180deg,#4A0020 0%,#C2185B 40%,#E91E8C 70%,#F8BBD0 100%);}
-body.tab-ps{background:linear-gradient(180deg,#1A0040 0%,#6A1B9A 40%,#9C27B0 70%,#CE93D8 100%);}
-body.tab-jf{background:linear-gradient(180deg,#1B3A1A 0%,#2E7D32 40%,#43A047 70%,#A5D6A7 100%);}
-body.tab-ot{background:linear-gradient(180deg,#4A1A00 0%,#C2410C 35%,#F97316 65%,#FDBA74 100%);}
-body.tab-wg{background:linear-gradient(180deg,#0F2540 0%,#3B6EA5 35%,#7FB3D9 65%,#E0F2FE 100%);}
+body.tab-bw{background:linear-gradient(180deg,#0A1730 0%,#1565C0 40%,#0C6E9E 70%,#0E5A6B 100%);}
+body.tab-pk{background:linear-gradient(180deg,#3E0019 0%,#C2185B 40%,#D1147B 70%,#A81351 100%);}
+body.tab-ps{background:linear-gradient(180deg,#1A0040 0%,#6A1B9A 40%,#9C27B0 70%,#7A2E8C 100%);}
+body.tab-jf{background:linear-gradient(180deg,#12290F 0%,#2E7D32 40%,#35823A 70%,#2C6B31 100%);}
+body.tab-ot{background:linear-gradient(180deg,#3A1400 0%,#C2410C 35%,#B64D05 65%,#8F3D06 100%);}
+body.tab-wg{background:linear-gradient(180deg,#0C1E33 0%,#3B6EA5 35%,#3073A3 65%,#27587D 100%);}
 body.tab-cb{background:linear-gradient(180deg,#050014 0%,#0D0030 30%,#1A0050 60%,#2D0070 100%);}
 body.tab-guide{background:linear-gradient(180deg,#1C1008 0%,#3E2000 35%,#5D3A00 65%,#8B5E00 100%);}
 body.tab-codes{background:linear-gradient(180deg,#0A0F1F 0%,#1A2547 30%,#2D3B6E 60%,#5B6FB8 100%);}
@@ -30,16 +30,17 @@ body.tab-wg::before{background:radial-gradient(ellipse at 25% 30%,rgba(180,220,2
 body.tab-cb::before{background:radial-gradient(ellipse at 30% 40%,rgba(100,50,255,.2) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(255,200,50,.1) 0%,transparent 50%);}
 body.tab-guide::before{background:radial-gradient(ellipse at 25% 35%,rgba(255,180,50,.12) 0%,transparent 50%),radial-gradient(ellipse at 75% 65%,rgba(255,140,0,.08) 0%,transparent 50%);}
 body.tab-codes::before{background:radial-gradient(ellipse at 30% 30%,rgba(120,150,255,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 70%,rgba(200,200,255,.08) 0%,transparent 50%);}
-.bubble{position:fixed;border-radius:50%;animation:rise linear infinite;pointer-events:none;z-index:0;transition:background 0.6s;}
-body.tab-bw .bubble{background:rgba(255,255,255,.06);}
-body.tab-pk .bubble{background:rgba(255,200,220,.08);}
-body.tab-ps .bubble{background:rgba(220,180,255,.08);}
-body.tab-jf .bubble{background:rgba(200,255,180,.08);}
-body.tab-ot .bubble{background:rgba(255,220,150,.1);}
-body.tab-wg .bubble{background:rgba(255,255,255,.15);}
-body.tab-cb .bubble{background:rgba(255,255,200,.1);}
-body.tab-guide .bubble{background:rgba(255,200,100,.07);}
-body.tab-codes .bubble{background:rgba(200,220,255,.08);}
+.bubble{position:fixed;border-radius:50%;animation:rise linear infinite;pointer-events:none;z-index:0;
+  transition:background 0.6s;box-shadow:inset 0 0 6px rgba(255,255,255,.25);}
+body.tab-bw .bubble{background:rgba(255,255,255,.14);}
+body.tab-pk .bubble{background:rgba(255,200,220,.17);}
+body.tab-ps .bubble{background:rgba(220,180,255,.17);}
+body.tab-jf .bubble{background:rgba(200,255,180,.17);}
+body.tab-ot .bubble{background:rgba(255,220,150,.19);}
+body.tab-wg .bubble{background:rgba(255,255,255,.26);}
+body.tab-cb .bubble{background:rgba(255,255,200,.19);}
+body.tab-guide .bubble{background:rgba(255,200,100,.16);}
+body.tab-codes .bubble{background:rgba(200,220,255,.17);}
 @keyframes rise{0%{transform:translateY(100vh) scale(0);opacity:0;}50%{opacity:1;}100%{transform:translateY(-10vh) scale(1);opacity:0;}}
 .container{max-width:900px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1;}
 .header{text-align:center;padding:40px 0 28px;animation:fadeDown .8s ease;}
@@ -99,7 +100,7 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .secret-ps{background:linear-gradient(135deg,rgba(106,27,154,.25),rgba(156,39,176,.2));border:1px solid rgba(206,147,216,.3);}
 .secret-jf{background:linear-gradient(135deg,rgba(255,143,0,.15),rgba(255,193,7,.1));border:1px solid rgba(255,224,130,.3);}
 .secret-title{font-family:'Jua',sans-serif;font-size:1.25em;color:white;display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
-.footer{text-align:center;color:rgba(255,255,255,.4);font-size:.78em;margin-top:16px;line-height:1.8;}
+.footer{text-align:center;color:rgba(255,255,255,.62);font-size:.78em;margin-top:16px;line-height:1.8;}
 @media(max-width:600px){.header h1{font-size:1.6em;}.section,.secret{padding:18px 13px;}.summary-row{grid-template-columns:1fr 1fr;}.tab-btn{font-size:.82em;padding:8px 14px;}}
 .secret-cb{background:linear-gradient(135deg,rgba(255,200,0,.15),rgba(255,100,50,.1));border:1px solid rgba(255,220,100,.3);}
 
@@ -151,12 +152,21 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .tab-bar.stuck{background:rgba(6,8,20,.82);border-bottom-color:rgba(255,255,255,.14);
   box-shadow:0 10px 30px rgba(0,0,0,.35);padding-top:9px;padding-bottom:9px;}
 .tab-bar.stuck .tab-btn{padding:7px 15px;font-size:.87em;}
+.tb-short{display:none;}
 @media(max-width:700px){
-  .tab-bar{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;
-    scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;
-    scroll-snap-type:x proximity;margin-bottom:18px;}
-  .tab-bar::-webkit-scrollbar{display:none;}
-  .tab-btn{flex:0 0 auto;scroll-snap-align:center;}
+  /* 가로 스크롤 대신 짧은 이름으로 줄여 두 줄 안에 넣는다 */
+  .tab-bar{flex-wrap:wrap;overflow-x:visible;justify-content:center;gap:4px;
+    margin-bottom:16px;padding:9px 10px;}
+  .tab-btn{flex:0 0 auto;font-size:.71em;padding:6px 8px;border-width:1px;}
+  .tab-bar.stuck{padding-top:7px;padding-bottom:7px;}
+  .tab-bar.stuck .tab-btn{font-size:.69em;padding:5px 8px;}
+  .tb-full{display:none;}
+  .tb-short{display:inline;}
+}
+@media(max-width:360px){
+  .tab-bar{gap:3px;padding:8px 6px;}
+  .tab-btn{font-size:.67em;padding:5px 7px;}
+  .tab-bar.stuck .tab-btn{font-size:.65em;padding:4px 6px;}
 }
 
 /* 2. 섹션 점프 네비게이션 */
@@ -365,15 +375,15 @@ body.tab-wg .chip-label{color:#BFDBFE;}
     <p>버전을 선택하면 해당 진화 경로를 볼 수 있어요! (2026 신버전 포함)</p>
   </div>
   <div class="tab-bar">
-    <button class="tab-btn active-bw" onclick="switchTab(this,'bw')">💙 블루 워터</button>
-    <button class="tab-btn" onclick="switchTab(this,'pk')">🌸 핑크랜드</button>
-    <button class="tab-btn" onclick="switchTab(this,'ps')">💜 퍼플 스카이</button>
-    <button class="tab-btn" onclick="switchTab(this,'jf')">🌿 제이드 포레스트</button>
-    <button class="tab-btn" onclick="switchTab(this,'ot')">🌴 오렌지 트로픽스</button>
-    <button class="tab-btn" onclick="switchTab(this,'wg')">❄️ 화이트 글래시어</button>
-    <button class="tab-btn" onclick="switchTab(this,'cb')">🔗 교배표</button>
-    <button class="tab-btn" onclick="switchTab(this,'guide')">📖 사용 가이드</button>
-    <button class="tab-btn" onclick="switchTab(this,'codes')">🛒 샵 코드</button>
+    <button class="tab-btn active-bw" onclick="switchTab(this,'bw')"><span class="tb-full">💙 블루 워터</span><span class="tb-short">💙 블루</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'pk')"><span class="tb-full">🌸 핑크랜드</span><span class="tb-short">🌸 핑크</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'ps')"><span class="tb-full">💜 퍼플 스카이</span><span class="tb-short">💜 퍼플</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'jf')"><span class="tb-full">🌿 제이드 포레스트</span><span class="tb-short">🌿 제이드</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'ot')"><span class="tb-full">🌴 오렌지 트로픽스</span><span class="tb-short">🌴 트로픽스</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'wg')"><span class="tb-full">❄️ 화이트 글래시어</span><span class="tb-short">❄️ 글래시어</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'cb')"><span class="tb-full">🔗 교배표</span><span class="tb-short">🔗 교배</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'guide')"><span class="tb-full">📖 사용 가이드</span><span class="tb-short">📖 가이드</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'codes')"><span class="tb-full">🛒 샵 코드</span><span class="tb-short">🛒 코드</span></button>
   </div>
   <div id="panel-bw" class="tab-panel active">
     <div class="tip" style="margin-bottom:18px;"><span class="tip-em">💡</span><span><strong>퍼펙트 케어 = 케어미스 0개 + 🍙 주먹밥(배고픔) 세포 5개↑ + 🩷 하트(행복) 세포 5개↑</strong> — 케어미스 0개만으로는 최고 성체가 되지 않아요.</span></div>
@@ -1088,8 +1098,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js?v=20260823b"></script>
-<script src="evo-render.js?v=20260823b"></script>
+<script src="evo-data.js?v=20260823c"></script>
+<script src="evo-render.js?v=20260823c"></script>
 <script>
 var CURRENT_TAB = 'bw';
 
