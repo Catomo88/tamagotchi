@@ -279,17 +279,20 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .evo-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
 .evo-flow>.evo-card{width:104px;flex:0 0 auto;}
 .evo-arrow{color:rgba(255,255,255,.4);font-size:1.4em;flex:0 0 auto;}
-.evo-flow-fan{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;flex:1 1 340px;min-width:0;}
-@media(max-width:600px){.evo-flow-fan{grid-template-columns:repeat(2,1fr);}}
 
-/* 2. 먹이 */
-.evo-foods{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;}
-.evo-food{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:8px 12px 8px 6px;}
-.evo-food>.evo-card{width:78px;flex:0 0 auto;}
-.evo-food-txt{display:flex;flex-direction:column;gap:3px;min-width:0;}
-.evo-food-k{font-family:'Jua',sans-serif;font-size:.92em;color:#fff;}
-.evo-food-i{font-size:.72em;color:rgba(255,255,255,.6);line-height:1.45;word-break:keep-all;}
+
+/* 먹이로 갈리는 청소년 4갈래 */
+.evo-branch{margin:14px 0 12px;text-align:center;font-size:.84em;
+  color:rgba(255,255,255,.72);line-height:1.6;word-break:keep-all;}
+.evo-branch b{color:#fff;}
+.evo-fan{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
+.evo-fan-item{display:flex;flex-direction:column;align-items:center;gap:3px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:8px 8px 11px;}
+.evo-fan-item>.evo-card{width:100%;padding-bottom:2px;}
+.evo-fan-k{font-family:'Jua',sans-serif;font-size:.86em;color:#fff;text-align:center;}
+.evo-fan-i{font-size:.71em;color:rgba(255,255,255,.62);line-height:1.5;text-align:center;
+  word-break:keep-all;}
 
 /* 3. 성체 4x4 */
 .evo-table{display:block;}
@@ -303,6 +306,7 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .evo-th-desc{font-size:.63em;color:rgba(255,255,255,.45);line-height:1.3;word-break:keep-all;}
 .evo-rh{display:flex;flex-direction:column;align-items:center;gap:2px;
   background:rgba(255,255,255,.07);border-radius:16px;padding:6px 4px 8px;}
+.evo-rh-in{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;}
 .evo-rh-food{font-size:.66em;color:rgba(255,255,255,.55);}
 .evo-cell{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
   border-radius:16px;display:flex;transition:border-color .2s,background .2s;}
@@ -334,13 +338,15 @@ body.tab-wg .chip-label{color:#BFDBFE;}
   .evo-cell .evo-nm{font-size:.68em;}
   .evo-cell .evo-jp{display:none;}
   .evo-cell .evo-card{padding:5px 2px 4px;}
+  .evo-fan{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
   .evo-rh{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;
-    padding:6px 12px 6px 6px;}
+    padding:6px 12px 6px 6px;flex-wrap:wrap;}
+  .evo-rh-in{flex-direction:row;align-items:center;gap:8px;width:auto;flex:0 0 auto;}
   .evo-rh>.evo-card{width:auto;flex:0 0 auto;padding:2px;}
-  .evo-rh .evo-thumb{max-width:46px;}
-  .evo-rh .evo-nm{font-size:.95em;}
-  .evo-rh .evo-jp{display:none;}
-  .evo-rh-food{margin-left:auto;font-size:.78em;}
+  .evo-rh-in .evo-thumb{max-width:46px;}
+  .evo-rh-in .evo-nm{font-size:.95em;}
+  .evo-rh-in .evo-jp{display:none;}
+  .evo-rh-food{font-size:.78em;}
   .evo-tier{display:block;margin:7px auto 0;font-size:.62em;padding:2px 6px;}
   .evo-cell{flex-direction:column-reverse;align-items:center;padding-bottom:8px;}
   .evo-cell .evo-tag{display:none;}
@@ -1142,8 +1148,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js?v=20260823e"></script>
-<script src="evo-render.js?v=20260823e"></script>
+<script src="evo-data.js?v=20260823g"></script>
+<script src="evo-render.js?v=20260823g"></script>
 <script>
 var CURRENT_TAB = 'bw';
 

@@ -37,40 +37,32 @@ function renderEvo(key) {
   if (!v) return '';
   var h = '';
 
-  /* ---- 1) 성장 흐름 : 아기 → 키즈 → 청소년 4갈래 ---- */
+  /* ---- 1) 성장 흐름 : 아기 → 키즈 → 먹이로 갈리는 청소년 4갈래 ---- */
   h += '<div class="evo-sec">';
   h += '<div class="evo-h"><span class="evo-h-num">1</span>성장 흐름' +
-       '<span class="evo-h-sub">알에서 깨어나 청소년이 되기까지</span></div>';
+       '<span class="evo-h-sub">아기 → 키즈 → 청소년</span></div>';
   h += '<div class="evo-flow">' +
          evoCard(500, { cls: 'evo-lg' }) +
          '<span class="evo-arrow">→</span>' +
          evoCard(v.kids, { cls: 'evo-lg' }) +
-         '<span class="evo-arrow">→</span>' +
-         '<div class="evo-flow-fan">' +
-           v.youngs.map(function (y) { return evoCard(y.id); }).join('') +
-         '</div>' +
        '</div>';
   h += '<div class="evo-note-line">🥚 <b>아기</b>는 모든 버전 공통이에요. ' +
        '<b>' + v.field + '</b> 필드에서 타마세포가 4개 모이면 <b>' + evoKo(v.kids) + '</b>가 됩니다.</div>';
-  h += '</div>';
-
-  /* ---- 2) 먹이 → 청소년 ---- */
-  h += '<div class="evo-sec">';
-  h += '<div class="evo-h"><span class="evo-h-num">2</span>어린이 때 먹이가 청소년을 결정' +
-       '<span class="evo-h-sub">가장 많이 먹인 먹이 종류로 갈림</span></div>';
-  h += '<div class="evo-foods">';
+  h += '<div class="evo-branch">⬇ 어린이 때 <b>가장 많이 먹인 먹이</b>에 따라 4갈래로 갈려요</div>';
+  h += '<div class="evo-fan">';
   v.youngs.forEach(function (y) {
-    h += '<div class="evo-food">' +
+    h += '<div class="evo-fan-item">' +
            evoCard(y.id) +
-           '<div class="evo-food-txt"><span class="evo-food-k">' + y.food + '</span>' +
-           '<span class="evo-food-i">' + y.items + '</span></div>' +
+           '<span class="evo-fan-k">' + y.food + '</span>' +
+           '<span class="evo-fan-i">' + y.items + '</span>' +
          '</div>';
   });
-  h += '</div></div>';
+  h += '</div>';
+  h += '</div>';
 
-  /* ---- 3) 성체 4x4 ---- */
+  /* ---- 2) 성체 4x4 ---- */
   h += '<div class="evo-sec">';
-  h += '<div class="evo-h"><span class="evo-h-num">3</span>성체 진화표' +
+  h += '<div class="evo-h"><span class="evo-h-num">2</span>성체 진화표' +
        '<span class="evo-h-sub">가로 = 돌본 정도 · 세로 = 청소년 계열</span></div>';
   h += '<div class="evo-table">';
   h += '<div class="evo-thead"><div class="evo-corner">청소년 ＼ 케어</div>';
@@ -81,8 +73,8 @@ function renderEvo(key) {
   h += '</div>';
   v.youngs.forEach(function (y) {
     h += '<div class="evo-trow">';
-    h +=   '<div class="evo-rh">' + evoCard(y.id, { cls: 'evo-sm' }) +
-             '<span class="evo-rh-food">' + y.food + '</span></div>';
+    h +=   '<div class="evo-rh"><div class="evo-rh-in">' + evoCard(y.id, { cls: 'evo-sm' }) +
+             '<span class="evo-rh-food">' + y.food + '</span></div></div>';
     h +=   '<div class="evo-cells">';
     y.a.forEach(function (aid, i) {
       h += '<div class="evo-cell' + (i === 0 ? ' evo-cell-best' : '') + '">' +
