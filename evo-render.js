@@ -79,8 +79,13 @@ function renderEvo(key) {
   h += '</div>';
   v.youngs.forEach(function (y) {
     h += '<div class="evo-trow">';
-    h +=   '<div class="evo-rh"><div class="evo-rh-in">' + evoCard(y.id, { cls: 'evo-sm' }) +
-             '<span class="evo-rh-food">' + y.food + '</span></div></div>';
+    h +=   '<div class="evo-rh">' +
+             '<div class="evo-rh-in">' + evoCard(y.id, { cls: 'evo-sm' }) + '</div>' +
+             '<div class="evo-rh-meta">' +
+               '<span class="evo-rh-food">' + y.food + '</span>' +
+               '<span class="evo-rh-items">' + y.items + '</span>' +
+             '</div>' +
+           '</div>';
     h +=   '<div class="evo-cells">';
     y.a.forEach(function (aid, i) {
       h += '<div class="evo-cell' + (i === 0 ? ' evo-cell-best' : '') + '">' +

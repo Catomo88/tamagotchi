@@ -313,8 +313,11 @@ body.tab-wg .chip-label{color:#BFDBFE;}
 .evo-th-desc{font-size:.63em;color:rgba(255,255,255,.45);line-height:1.3;word-break:keep-all;}
 .evo-rh{display:flex;flex-direction:column;align-items:center;gap:2px;
   background:rgba(255,255,255,.07);border-radius:16px;padding:6px 4px 8px;}
-.evo-rh-in{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;}
+.evo-rh-in{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;min-width:0;}
+.evo-rh-meta{display:flex;flex-direction:column;align-items:center;gap:1px;width:100%;min-width:0;}
 .evo-rh-food{font-size:.66em;color:rgba(255,255,255,.55);}
+.evo-rh-items{font-size:.6em;color:rgba(255,255,255,.42);text-align:center;
+  line-height:1.35;word-break:keep-all;}
 .evo-cell{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
   border-radius:16px;display:flex;transition:border-color .2s,background .2s;}
 .evo-cell:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);}
@@ -347,13 +350,16 @@ body.tab-wg .chip-label{color:#BFDBFE;}
   .evo-cell .evo-card{padding:5px 2px 4px;}
   .evo-fan{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
   .evo-rh{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;
-    padding:6px 12px 6px 6px;flex-wrap:wrap;}
+    padding:7px 13px 7px 6px;flex-wrap:nowrap;}
   .evo-rh-in{flex-direction:row;align-items:center;gap:8px;width:auto;flex:0 0 auto;}
+  .evo-rh-meta{margin-left:auto;align-items:flex-end;text-align:right;
+    width:auto;flex:1 1 auto;gap:2px;}
+  .evo-rh-food{font-size:.82em;white-space:nowrap;color:rgba(255,255,255,.75);}
+  .evo-rh-items{font-size:.68em;text-align:right;color:rgba(255,255,255,.5);}
   .evo-rh>.evo-card{width:auto;flex:0 0 auto;padding:2px;}
   .evo-rh-in .evo-thumb{max-width:46px;}
   .evo-rh-in .evo-nm{font-size:.95em;}
   .evo-rh-in .evo-jp{display:none;}
-  .evo-rh-food{font-size:.78em;}
   .evo-tier{display:block;margin:7px auto 0;font-size:.62em;padding:2px 6px;}
   .evo-cell{flex-direction:column-reverse;align-items:center;padding-bottom:8px;}
   .evo-cell .evo-tag{display:none;}
@@ -1155,8 +1161,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js?v=20260823h"></script>
-<script src="evo-render.js?v=20260823h"></script>
+<script src="evo-data.js?v=20260823i"></script>
+<script src="evo-render.js?v=20260823i"></script>
 <script>
 var CURRENT_TAB = 'bw';
 
