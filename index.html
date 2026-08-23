@@ -410,6 +410,12 @@ body.tab-wg .chip-label{color:#BFDBFE;}
   .dex-grid{grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:5px;}
   .dex-thumb{max-width:46px;}
 }
+
+.hue{display:inline-flex;align-items:center;gap:5px;font-size:.78em;padding:4px 11px 4px 5px;
+  border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  color:rgba(255,255,255,.88);white-space:nowrap;}
+.hue::before{content:'';width:13px;height:13px;border-radius:50%;background:var(--c);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);flex:0 0 auto;}
 /* 맨 위로 */
 .to-top{position:fixed;right:18px;bottom:18px;z-index:80;width:46px;height:46px;border-radius:50%;
   border:1px solid rgba(255,255,255,.22);background:rgba(8,10,22,.6);color:#fff;font-size:1.15em;
@@ -737,9 +743,33 @@ body.tab-wg .chip-label{color:#BFDBFE;}
         <div style="font-family:'Jua',sans-serif;color:#FCD34D;font-size:1em;margin-bottom:6px;">&#129516; 유전 시스템 (Genes)</div>
         <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.85;">
           교배로 태어난 아기는 부모로부터 <strong style="color:#FDE68A;">2가지 유전 형질</strong>만 물려받아요:<br>
-          &bull; &#128064; <strong>눈 모양</strong> (Eye shape)<br>
-          &bull; &#127912; <strong>몸 색깔</strong> (Body color)<br>
+          &bull; &#128064; <strong>눈 모양</strong> (Eye shape) — <strong style="color:#FDE68A;">51종</strong>. 캐릭터마다 눈 모양이 다 달라요. 비슷해 보여도 똑같은 건 하나도 없어요.<br>
+          &bull; &#127912; <strong>몸 색깔</strong> (Body color) — <strong style="color:#FDE68A;">16색</strong> (아래 목록)<br>
           <span style="color:rgba(255,255,255,.55);">&#9888;&#65039; 종족(species)은 유전 안 됨! 어떤 음식·필드·케어를 받느냐로 결정.</span>
+        </div>
+
+        <div style="font-family:'Jua',sans-serif;color:#FCD34D;font-size:.92em;margin:14px 0 6px;">&#127922; 어떻게 섞이나요?</div>
+        <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.85;">
+          내가 키우던 다마고치와 교배 상대, <strong>둘 중 어느 쪽 형질이든</strong> 아기에게 갈 수 있어요.<br>
+          &bull; 한쪽 부모의 눈 모양과 몸 색깔을 <strong>그대로</strong> 받기도 하고<br>
+          &bull; 양쪽 특징을 <strong>절반씩 섞어서</strong> 받기도 해요<br>
+          <span style="color:rgba(255,255,255,.55);">그래서 같은 부모로 반복 교배해도 매번 다른 아기가 나올 수 있어요.</span>
+        </div>
+
+        <div style="font-family:'Jua',sans-serif;color:#FCD34D;font-size:.92em;margin:14px 0 6px;">&#127912; 몸 색깔 16종</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">
+          <span class="hue" style="--c:#E5484D;">레드</span><span class="hue" style="--c:#F06AA8;">핑크</span>
+          <span class="hue" style="--c:#F8C0D8;">파스텔 핑크</span><span class="hue" style="--c:#9A5CD0;">퍼플</span>
+          <span class="hue" style="--c:#C9B6EC;">파스텔 라벤더</span><span class="hue" style="--c:#3B7DD8;">블루</span>
+          <span class="hue" style="--c:#5FC8E8;">라이트 블루</span><span class="hue" style="--c:#BBD8F2;">파스텔 블루</span>
+          <span class="hue" style="--c:#F2C43D;">옐로</span><span class="hue" style="--c:#F7E6A8;">파스텔 옐로</span>
+          <span class="hue" style="--c:#F08A34;">오렌지</span><span class="hue" style="--c:#3EA95B;">그린</span>
+          <span class="hue" style="--c:#8FD68A;">라이트 그린</span><span class="hue" style="--c:#A8E3CE;">민트 그린</span>
+          <span class="hue" style="--c:#9AA3AD;">그레이</span><span class="hue" style="--c:#F2F2F2;">화이트</span>
+        </div>
+        <div style="font-size:.8em;color:rgba(255,255,255,.6);line-height:1.7;">
+          색깔은 태어난 뒤에도 <strong>주스(SNACK)</strong>로 바꿀 수 있어요 — 위 &quot;색깔 바꾸기&quot; 항목 참고.
+          제이드 포레스트부터는 다크 그린 같은 전용 색이 더 추가됐어요.
         </div>
       </div>
 
@@ -753,7 +783,7 @@ body.tab-wg .chip-label{color:#BFDBFE;}
         </div>
       </div>
 
-      <div class="tip"><span class="tip-em">&#128161;</span><span><strong>50,000가지 캐릭터 조합</strong> 가능! 같은 캐릭터를 여러 세대 반복 교배하면 특정 형질이 나올 확률이 올라가지만, 100% 보장은 안 돼요.</span></div>
+      <div class="tip"><span class="tip-em">&#128161;</span><span><strong>&#128161; 조합 가능한 모습은 <strong>55,488가지</strong> — 캐릭터 68종 × 눈 모양 51종 × 몸 색깔 16색. 같은 부모로 반복 교배하면 <strong>원하는 눈 모양·몸 색깔</strong>이 나올 확률은 올라가지만 100% 보장은 안 돼요.</strong></span></div>
     </div>
 
     <!-- 우주 여행 -->
@@ -1161,8 +1191,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js?v=20260823i"></script>
-<script src="evo-render.js?v=20260823i"></script>
+<script src="evo-data.js?v=20260823k"></script>
+<script src="evo-render.js?v=20260823k"></script>
 <script>
 var CURRENT_TAB = 'bw';
 
