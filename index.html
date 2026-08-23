@@ -15,6 +15,8 @@ body.tab-bw{background:linear-gradient(180deg,#0D1B3E 0%,#1565C0 40%,#0288D1 70%
 body.tab-pk{background:linear-gradient(180deg,#4A0020 0%,#C2185B 40%,#E91E8C 70%,#F8BBD0 100%);}
 body.tab-ps{background:linear-gradient(180deg,#1A0040 0%,#6A1B9A 40%,#9C27B0 70%,#CE93D8 100%);}
 body.tab-jf{background:linear-gradient(180deg,#1B3A1A 0%,#2E7D32 40%,#43A047 70%,#A5D6A7 100%);}
+body.tab-ot{background:linear-gradient(180deg,#4A1A00 0%,#C2410C 35%,#F97316 65%,#FDBA74 100%);}
+body.tab-wg{background:linear-gradient(180deg,#0F2540 0%,#3B6EA5 35%,#7FB3D9 65%,#E0F2FE 100%);}
 body.tab-cb{background:linear-gradient(180deg,#050014 0%,#0D0030 30%,#1A0050 60%,#2D0070 100%);}
 body.tab-guide{background:linear-gradient(180deg,#1C1008 0%,#3E2000 35%,#5D3A00 65%,#8B5E00 100%);}
 body.tab-codes{background:linear-gradient(180deg,#0A0F1F 0%,#1A2547 30%,#2D3B6E 60%,#5B6FB8 100%);}
@@ -23,6 +25,8 @@ body.tab-bw::before{background:radial-gradient(ellipse at 20% 30%,rgba(66,165,24
 body.tab-pk::before{background:radial-gradient(ellipse at 20% 30%,rgba(255,100,150,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(255,200,220,.1) 0%,transparent 50%);}
 body.tab-ps::before{background:radial-gradient(ellipse at 20% 30%,rgba(180,100,255,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(220,180,255,.1) 0%,transparent 50%);}
 body.tab-jf::before{background:radial-gradient(ellipse at 20% 30%,rgba(100,200,100,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(200,230,150,.1) 0%,transparent 50%);}
+body.tab-ot::before{background:radial-gradient(ellipse at 25% 30%,rgba(255,180,80,.18) 0%,transparent 50%),radial-gradient(ellipse at 75% 70%,rgba(255,220,150,.1) 0%,transparent 50%);}
+body.tab-wg::before{background:radial-gradient(ellipse at 25% 30%,rgba(180,220,255,.2) 0%,transparent 50%),radial-gradient(ellipse at 75% 70%,rgba(220,240,255,.12) 0%,transparent 50%);}
 body.tab-cb::before{background:radial-gradient(ellipse at 30% 40%,rgba(100,50,255,.2) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(255,200,50,.1) 0%,transparent 50%);}
 body.tab-guide::before{background:radial-gradient(ellipse at 25% 35%,rgba(255,180,50,.12) 0%,transparent 50%),radial-gradient(ellipse at 75% 65%,rgba(255,140,0,.08) 0%,transparent 50%);}
 body.tab-codes::before{background:radial-gradient(ellipse at 30% 30%,rgba(120,150,255,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 70%,rgba(200,200,255,.08) 0%,transparent 50%);}
@@ -31,6 +35,8 @@ body.tab-bw .bubble{background:rgba(255,255,255,.06);}
 body.tab-pk .bubble{background:rgba(255,200,220,.08);}
 body.tab-ps .bubble{background:rgba(220,180,255,.08);}
 body.tab-jf .bubble{background:rgba(200,255,180,.08);}
+body.tab-ot .bubble{background:rgba(255,220,150,.1);}
+body.tab-wg .bubble{background:rgba(255,255,255,.15);}
 body.tab-cb .bubble{background:rgba(255,255,200,.1);}
 body.tab-guide .bubble{background:rgba(255,200,100,.07);}
 body.tab-codes .bubble{background:rgba(200,220,255,.08);}
@@ -47,6 +53,8 @@ body.tab-codes .bubble{background:rgba(200,220,255,.08);}
 .tab-btn.active-pk{background:linear-gradient(135deg,#C2185B,#F48FB1);border-color:#F48FB1;color:white;box-shadow:0 4px 18px rgba(244,143,177,.4);}
 .tab-btn.active-ps{background:linear-gradient(135deg,#6A1B9A,#CE93D8);border-color:#CE93D8;color:white;box-shadow:0 4px 18px rgba(206,147,216,.4);}
 .tab-btn.active-jf{background:linear-gradient(135deg,#2E7D32,#66BB6A);border-color:#66BB6A;color:white;box-shadow:0 4px 18px rgba(102,187,106,.4);}
+.tab-btn.active-ot{background:linear-gradient(135deg,#C2410C,#FB923C);border-color:#FB923C;color:white;box-shadow:0 4px 18px rgba(251,146,60,.4);}
+.tab-btn.active-wg{background:linear-gradient(135deg,#3B6EA5,#93C5FD);border-color:#93C5FD;color:white;box-shadow:0 4px 18px rgba(147,197,253,.4);}
 .tab-btn.active-cb{background:linear-gradient(135deg,#FFD700,#FF8C00);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,200,50,.4);}
 .tab-btn.active-guide{background:linear-gradient(135deg,#FF8C00,#FFD700);border-color:#FFD700;color:#1a0a00;box-shadow:0 4px 18px rgba(255,160,0,.4);}
 .tab-btn.active-codes{background:linear-gradient(135deg,#3D5AFE,#82B1FF);border-color:#82B1FF;color:white;box-shadow:0 4px 18px rgba(130,177,255,.4);}
@@ -61,6 +69,8 @@ body.tab-codes .bubble{background:rgba(200,220,255,.08);}
 .pill-pk{background:linear-gradient(135deg,#F48FB1,#F8BBD0);color:#4A0020;}
 .pill-ps{background:linear-gradient(135deg,#CE93D8,#E1BEE7);color:#1A0040;}
 .pill-jf{background:linear-gradient(135deg,#66BB6A,#A5D6A7);color:#1B3A1A;}
+.pill-ot{background:linear-gradient(135deg,#FB923C,#FED7AA);color:#4A1A00;}
+.pill-wg{background:linear-gradient(135deg,#93C5FD,#DBEAFE);color:#0F2540;}
 .chart-img{width:100%;border-radius:16px;display:block;box-shadow:0 8px 28px rgba(0,0,0,.3);transition:transform .3s;}
 .chart-img:hover{transform:scale(1.01);}
 .summary-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(182px,1fr));gap:10px;margin-top:14px;}
@@ -72,6 +82,8 @@ body.tab-bw .chip-label{color:#80DEEA;}
 body.tab-pk .chip-label{color:#F8BBD0;}
 body.tab-ps .chip-label{color:#E1BEE7;}
 body.tab-jf .chip-label{color:#A5D6A7;}
+body.tab-ot .chip-label{color:#FED7AA;}
+body.tab-wg .chip-label{color:#BFDBFE;}
 .chip-val{font-size:.78em;color:rgba(255,255,255,.8);}
 .cb{display:inline-block;padding:2px 9px;border-radius:10px;font-size:.76em;font-weight:800;font-family:'Jua',sans-serif;}
 .cb0{background:linear-gradient(135deg,#FFD700,#FFA000);color:#fff;}
@@ -142,13 +154,15 @@ body.tab-jf .chip-label{color:#A5D6A7;}
 <div class="container">
   <div class="header">
     <h1>🐣 다마고치 파라다이스<br>버전별 진화표</h1>
-    <p>버전을 선택하면 해당 진화 경로를 볼 수 있어요!</p>
+    <p>버전을 선택하면 해당 진화 경로를 볼 수 있어요! (2026 신버전 포함)</p>
   </div>
   <div class="tab-bar">
     <button class="tab-btn active-bw" onclick="switchTab(this,'bw')">💙 블루 워터</button>
     <button class="tab-btn" onclick="switchTab(this,'pk')">🌸 핑크랜드</button>
     <button class="tab-btn" onclick="switchTab(this,'ps')">💜 퍼플 스카이</button>
     <button class="tab-btn" onclick="switchTab(this,'jf')">🌿 제이드 포레스트</button>
+    <button class="tab-btn" onclick="switchTab(this,'ot')">🌴 오렌지 트로픽스</button>
+    <button class="tab-btn" onclick="switchTab(this,'wg')">❄️ 화이트 글래시어</button>
     <button class="tab-btn" onclick="switchTab(this,'cb')">🔗 교배표</button>
     <button class="tab-btn" onclick="switchTab(this,'guide')">📖 사용 가이드</button>
     <button class="tab-btn" onclick="switchTab(this,'codes')">🛒 샵 코드</button>
@@ -875,6 +889,197 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+  <!-- ══════════════════ 오렌지 트로픽스 (2026) ══════════════════ -->
+  <div id="panel-ot" class="tab-panel">
+
+    <div class="section">
+      <div class="section-title">🌴 오렌지 트로픽스 <span class="pill pill-ot">2026 신버전</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:12px;">
+        <div class="chip"><span class="chip-icon">📅</span><div><span class="chip-label">출시일</span><span class="chip-val">2026년 7월 10일 (전세계)</span></div></div>
+        <div class="chip"><span class="chip-icon">🌴</span><div><span class="chip-label">시작 필드</span><span class="chip-val">트로피컬 필드 (해변+정글)</span></div></div>
+        <div class="chip"><span class="chip-icon">🔓</span><div><span class="chip-label">해금 순서</span><span class="chip-val">숲 → 아이스 필드</span></div></div>
+        <div class="chip"><span class="chip-icon">🌟</span><div><span class="chip-label">전용 비밀 캐릭터</span><span class="chip-val">마나파치 (Manapatchi)</span></div></div>
+      </div>
+      <div class="tip"><span class="tip-em">⚠️</span><span>2025 버전의 <strong>땅·물·하늘 필드는 미포함!</strong> 마메치 같은 클래식 필드 캐릭터는 키울 수 없어요. 대신 트로피컬 + 숲 + 아이스 캐릭터를 키울 수 있어요.</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🆕 2026 신기능 <span class="pill pill-ot">트로픽스·글래시어 공통</span></div>
+      <div style="display:grid;gap:10px;">
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #FB923C;">
+          <div style="font-family:'Jua',sans-serif;color:#FED7AA;margin-bottom:5px;">🍑 골든 피치 (Golden Peach)</div>
+          <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">에그 헌트에서 <strong>9개 알 퍼펙트</strong> 달성 시 획득! 먹이면 <strong style="color:#FDE68A;">케어미스 1개 감소</strong>. 시리즈 최초로 케어미스를 되돌릴 수 있어요!</div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #FB923C;">
+          <div style="font-family:'Jua',sans-serif;color:#FED7AA;margin-bottom:5px;">🎮 통신 미니게임 (Connection Mini-Games)</div>
+          <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">신규 미니게임 2종! 혼자서도, 기기 2대를 도킹해서 친구와 협동·대전도 가능. <span style="color:#FCA5A5;">단, 2025 버전(핑크·블루·퍼플·제이드)과는 통신 미니게임 불가!</span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #FB923C;">
+          <div style="font-family:'Jua',sans-serif;color:#FED7AA;margin-bottom:5px;">🏞️ 필드 확장 + 낮은 질병률</div>
+          <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">필드당 최대 <strong>6마리</strong>까지 거주 가능 (기존 4마리). 신규 필드 캐릭터 질병률 <strong>30%</strong> (기존 35%)로 관리가 조금 더 쉬워요!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🧒 트로피컬 필드 진화표 <span class="pill pill-ot">먹이 → 청소년</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;">
+        <div class="chip"><span class="chip-icon">🥩</span><div><span class="chip-label">으르렁 (Roar)</span><span class="chip-val">트로피컬 스테이크·패티·하와이안 버거</span></div></div>
+        <div class="chip"><span class="chip-icon">🍌</span><div><span class="chip-label">아장이 (Toddle)</span><span class="chip-val">열대과일·바나나·과일젤리</span></div></div>
+        <div class="chip"><span class="chip-icon">🦋</span><div><span class="chip-label">날름이 (Lick)</span><span class="chip-val">나비 과자·먹이 벌레·나비 샐러드</span></div></div>
+        <div class="chip"><span class="chip-icon">🌱</span><div><span class="chip-label">쑥쑥이 (Sprout)</span><span class="chip-val">사료 등 골고루</span></div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">⭐ 성체 진화표 <span class="pill pill-ot">케어미스별</span></div>
+      <table style="width:100%;border-collapse:separate;border-spacing:0 6px;font-size:.8em;">
+        <thead><tr style="color:rgba(255,255,255,.6);font-family:'Jua',sans-serif;">
+          <th style="text-align:left;padding:6px 8px;">청소년</th>
+          <th style="text-align:left;padding:6px 8px;">🌟 퍼펙트(0)</th>
+          <th style="text-align:left;padding:6px 8px;">0~1개</th>
+          <th style="text-align:left;padding:6px 8px;">2~5개</th>
+          <th style="text-align:left;padding:6px 8px;">6개↑</th>
+        </tr></thead>
+        <tbody style="color:rgba(255,255,255,.88);">
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🥩 으르렁</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">트로피컬 미야오치</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">마딜로치 🦔</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">타란티치 🕷️</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">크로코치 🐊</td>
+          </tr>
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🍌 아장이</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">트로피컬 마메치</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">파로로치 🦜</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">테나치</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">나마케모치 🦥</td>
+          </tr>
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🦋 날름이</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">쿠이쿠이치</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">포이즈치 ☠️</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">카멜레오치 🦎</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">이구아나치 🦖</td>
+          </tr>
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🌱 쑥쑥이</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">야시키치 🌴</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">트로피컬 포츠넨치</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">아나나치 🍍</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">아보보치 🥑</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tip" style="margin-top:12px;"><span class="tip-em">🌟</span><span>퍼펙트 케어 = 케어미스 0개 + 배고픔·행복 게이지 <strong>각 5회 이상 가득</strong> 채우기</span></div>
+    </div>
+
+    <div class="section secret-jf" style="background:linear-gradient(135deg,rgba(251,146,60,.2),rgba(253,186,116,.12));border-color:rgba(253,186,116,.35);">
+      <div class="secret-title">🌟 비밀 캐릭터 <span class="pill" style="background:linear-gradient(135deg,#EA580C,#FB923C);color:white;">트로픽스 전용</span></div>
+      <div style="text-align:center;padding:14px 0;">
+        <div style="font-size:3em;margin-bottom:8px;">🐠</div>
+        <div style="font-family:'Jua',sans-serif;font-size:1.5em;color:#FED7AA;margin-bottom:8px;">마나파치 (Manapatchi)</div>
+        <div style="color:rgba(255,255,255,.78);font-size:.87em;line-height:1.9;">으르렁·아장이·날름이 청소년 상태에서<br><strong style="color:#FDBA74;">서로 다른 색깔 기기 2개와 연결</strong>하면 획득!<br><span style="font-size:.85em;color:rgba(255,255,255,.5);">※ 쑥쑥이 청소년 불가</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ 화이트 글래시어 (2026) ══════════════════ -->
+  <div id="panel-wg" class="tab-panel">
+
+    <div class="section">
+      <div class="section-title">❄️ 화이트 글래시어 <span class="pill pill-wg">2026 신버전</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:12px;">
+        <div class="chip"><span class="chip-icon">📅</span><div><span class="chip-label">출시일</span><span class="chip-val">2026년 7월 10일 (전세계)</span></div></div>
+        <div class="chip"><span class="chip-icon">❄️</span><div><span class="chip-label">시작 필드</span><span class="chip-val">아이스 필드 (얼음 바이옴)</span></div></div>
+        <div class="chip"><span class="chip-icon">🔓</span><div><span class="chip-label">해금 순서</span><span class="chip-val">숲 → 트로피컬 필드</span></div></div>
+        <div class="chip"><span class="chip-icon">🌟</span><div><span class="chip-label">전용 비밀 캐릭터</span><span class="chip-val">호보호른치 (Hobohorntchi)</span></div></div>
+      </div>
+      <div class="tip"><span class="tip-em">⚠️</span><span>2025 버전의 <strong>땅·물·하늘 필드는 미포함!</strong> 대신 아이스 + 숲 + 트로피컬 캐릭터를 키울 수 있어요. 아이스 캐릭터는 2026 버전에서만!</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🆕 2026 신기능 <span class="pill pill-wg">트로픽스·글래시어 공통</span></div>
+      <div style="display:grid;gap:10px;">
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #93C5FD;">
+          <div style="font-family:'Jua',sans-serif;color:#BFDBFE;margin-bottom:5px;">🍑 골든 피치 (Golden Peach)</div>
+          <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">에그 헌트에서 <strong>9개 알 퍼펙트</strong> 달성 시 획득! 먹이면 <strong style="color:#FDE68A;">케어미스 1개 감소</strong>. 시리즈 최초로 케어미스를 되돌릴 수 있어요!</div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #93C5FD;">
+          <div style="font-family:'Jua',sans-serif;color:#BFDBFE;margin-bottom:5px;">🎮 통신 미니게임 (Connection Mini-Games)</div>
+          <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">신규 미니게임 2종! 혼자서도, 기기 2대 도킹해서 친구와 협동·대전도 가능. <span style="color:#FCA5A5;">단, 2025 버전(핑크·블루·퍼플·제이드)과는 통신 미니게임 불가!</span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-left:4px solid #93C5FD;">
+          <div style="font-family:'Jua',sans-serif;color:#BFDBFE;margin-bottom:5px;">🏞️ 필드 확장 + 낮은 질병률</div>
+          <div style="font-size:.85em;color:rgba(255,255,255,.85);line-height:1.8;">필드당 최대 <strong>6마리</strong>까지 거주 가능 (기존 4마리). 아이스 캐릭터 질병률 <strong>30%</strong> (기존 35%)로 관리가 조금 더 쉬워요!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🧒 아이스 필드 진화표 <span class="pill pill-wg">먹이 → 청소년</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;">
+        <div class="chip"><span class="chip-icon">🥩</span><div><span class="chip-label">으르렁 (Roar)</span><span class="chip-val">냉동고기·통조림고기·비프 스트로가노프</span></div></div>
+        <div class="chip"><span class="chip-icon">🐟</span><div><span class="chip-label">쭉쭉이 (Glide)</span><span class="chip-val">북방 해산물·연어알·블리니</span></div></div>
+        <div class="chip"><span class="chip-icon">🍒</span><div><span class="chip-label">아장이 (Toddle)</span><span class="chip-val">비트·붉은 열매·보르시·잼 홍차</span></div></div>
+        <div class="chip"><span class="chip-icon">🌱</span><div><span class="chip-label">둥실이 (Float)</span><span class="chip-val">사료 등 골고루</span></div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">⭐ 성체 진화표 <span class="pill pill-wg">케어미스별</span></div>
+      <table style="width:100%;border-collapse:separate;border-spacing:0 6px;font-size:.8em;">
+        <thead><tr style="color:rgba(255,255,255,.6);font-family:'Jua',sans-serif;">
+          <th style="text-align:left;padding:6px 8px;">청소년</th>
+          <th style="text-align:left;padding:6px 8px;">🌟 퍼펙트(0)</th>
+          <th style="text-align:left;padding:6px 8px;">0~1개</th>
+          <th style="text-align:left;padding:6px 8px;">2~5개</th>
+          <th style="text-align:left;padding:6px 8px;">6개↑</th>
+        </tr></thead>
+        <tbody style="color:rgba(255,255,255,.88);">
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🥩 으르렁</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">오코죠치 🦡</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">울프치 🐺</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">폴라쿠마치 🐻‍❄️</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">아자라치 🦭</td>
+          </tr>
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🐟 쭉쭉이</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">아이시 이루카치 🐬</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">긴지로치</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">랏코치 🦦</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">호펜치 🐧</td>
+          </tr>
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🍒 아장이</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">레밍치 🐹</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">무스치 🫎</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">라이초치 🐦</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">유키우사치 🐇</td>
+          </tr>
+          <tr>
+            <td style="background:rgba(255,255,255,.08);padding:9px 8px;border-radius:8px 0 0 8px;font-weight:800;">🌱 둥실이</td>
+            <td style="background:rgba(255,213,79,.15);padding:9px 8px;color:#FDE68A;">네리네치</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">단고우오치 🐟</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;">예이티치 ⛄</td>
+            <td style="background:rgba(255,255,255,.06);padding:9px 8px;border-radius:0 8px 8px 0;">유키라라치 ❄️</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tip" style="margin-top:12px;"><span class="tip-em">🌟</span><span>퍼펙트 케어 = 케어미스 0개 + 배고픔·행복 게이지 <strong>각 5회 이상 가득</strong> 채우기</span></div>
+    </div>
+
+    <div class="section" style="background:linear-gradient(135deg,rgba(147,197,253,.18),rgba(219,234,254,.1));border-color:rgba(191,219,254,.35);">
+      <div class="secret-title">🌟 비밀 캐릭터 <span class="pill" style="background:linear-gradient(135deg,#3B6EA5,#93C5FD);color:white;">글래시어 전용</span></div>
+      <div style="text-align:center;padding:14px 0;">
+        <div style="font-size:3em;margin-bottom:8px;">🦌</div>
+        <div style="font-family:'Jua',sans-serif;font-size:1.5em;color:#BFDBFE;margin-bottom:8px;">호보호른치 (Hobohorntchi)</div>
+        <div style="color:rgba(255,255,255,.78);font-size:.87em;line-height:1.9;">으르렁·쭉쭉이·아장이 청소년 상태에서<br><strong style="color:#93C5FD;">서로 다른 색깔 기기 2개와 연결</strong>하면 획득!<br><span style="font-size:.85em;color:rgba(255,255,255,.5);">※ 둥실이 청소년 불가</span></div>
+      </div>
+    </div>
+  </div>
   <div class="footer">
     이미지 출처: blog.naver.com/game_mayo &nbsp;·&nbsp; ⓒ Bandai — Tamagotchi Paradise 공식 제품
   </div>
