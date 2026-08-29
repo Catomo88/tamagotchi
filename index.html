@@ -416,6 +416,19 @@ body.tab-wg .chip-label{color:#BFDBFE;}
   color:rgba(255,255,255,.88);white-space:nowrap;}
 .hue::before{content:'';width:13px;height:13px;border-radius:50%;background:var(--c);
   box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);flex:0 0 auto;}
+
+/* 미니게임 보상표 */
+.mg-tbl{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:4px;}
+.mg-h{font-family:'Jua',sans-serif;font-size:.76em;color:rgba(255,255,255,.5);
+  text-align:center;padding:2px 0 4px;}
+.mg-h:first-child{text-align:left;}
+.mg-r{font-family:'Jua',sans-serif;font-size:.78em;color:rgba(255,255,255,.82);
+  display:flex;align-items:center;}
+.mg-v{font-size:.82em;color:rgba(255,255,255,.85);text-align:center;
+  background:rgba(255,255,255,.07);border-radius:8px;padding:5px 2px;
+  font-variant-numeric:tabular-nums;}
+.mg-best{background:rgba(255,215,0,.2);color:#FFE9A8;font-weight:800;}
+.mg-fail{background:rgba(255,255,255,.04);color:rgba(255,255,255,.45);}
 /* 맨 위로 */
 .to-top{position:fixed;right:18px;bottom:18px;z-index:80;width:46px;height:46px;border-radius:50%;
   border:1px solid rgba(255,255,255,.22);background:rgba(8,10,22,.6);color:#fff;font-size:1.15em;
@@ -755,6 +768,72 @@ body.tab-wg .chip-label{color:#BFDBFE;}
           <span style="color:#FDE68A;">하루에 음식 재료를 폭발적으로 모을 수 있어요!</span>
         </div>
       </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">&#127918; 미니게임 6종 <span class="pill" style="background:linear-gradient(135deg,#FFD700,#FF8C00);color:#1a0a00;">고치포인트 벌이</span></div>
+      <p style="color:rgba(255,255,255,.7);font-size:.85em;margin-bottom:12px;">
+        연구소(LAB) 모드에서 즐길 수 있어요. <strong>고치포인트를 버는 가장 기본적인 방법</strong>이라,
+        밥·간식·유구를 사려면 여기서 모으는 게 제일 빨라요.</p>
+
+      <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:14px;">
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.95em;margin-bottom:3px;">🍼 서둘러! 베이비 밀크</div>
+          <div style="font-size:.72em;color:rgba(255,255,255,.45);margin-bottom:6px;">いそいでベビーミルク</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">우유를 달라고 보채는 아기에게 서둘러 먹여주세요.<br>
+            <span style="color:#FFD98A;">대성공 조건 &mdash; <strong>10회 성공</strong></span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.95em;margin-bottom:3px;">🏃 점프! 비타민치</div>
+          <div style="font-size:.72em;color:rgba(255,255,255,.45);margin-bottom:6px;">ジャンプ！ビタミンっち</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">제한 시간 안에 비타민치가 골인하도록 도와주세요.<br>
+            <span style="color:#FFD98A;">대성공 조건 &mdash; <strong>10회 성공</strong></span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.95em;margin-bottom:3px;">🍳 딱 맞게! 요리 짝맞추기</div>
+          <div style="font-size:.72em;color:rgba(255,255,255,.45);margin-bottom:6px;">ピッタリ！おりょうりあわせ</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">뒤집힌 카드에서 같은 요리끼리 짝을 맞추는 기억력 게임.<br>
+            <span style="color:#FFD98A;">대성공 조건 &mdash; <strong>7쌍 성립</strong></span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.95em;margin-bottom:3px;">💩 떠돌이! 응가 청소부</div>
+          <div style="font-size:.72em;color:rgba(255,255,255,.45);margin-bottom:6px;">さすらいの！うんちそうじにん</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">위·가운데·아래 세 줄에 떨어진 응가를 치우도록 도와주세요.<br>
+            <span style="color:#FFD98A;">대성공 조건 &mdash; <strong>30개</strong></span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.95em;margin-bottom:3px;">🧹 깨끗하게! 먼지 버스터</div>
+          <div style="font-size:.72em;color:rgba(255,255,255,.45);margin-bottom:6px;">きれいに！ほこりバスター</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">먼지를 치워서 파묻힌 다마고치를 구출하세요.<br>
+            <span style="color:#FFD98A;">대성공 조건 &mdash; <strong>10회 구출</strong></span></div>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:13px 15px;">
+          <div style="font-family:'Jua',sans-serif;color:#FDE68A;font-size:.95em;margin-bottom:3px;">☄️ 격퇴! 운석 펀치</div>
+          <div style="font-size:.72em;color:rgba(255,255,255,.45);margin-bottom:6px;">げきたい！いんせきパンチ</div>
+          <div style="font-size:.83em;color:rgba(255,255,255,.8);line-height:1.7;">무작위로 떨어지는 운석을 펀치로 튕겨내세요.<br>
+            <span style="color:#FFD98A;">대성공 조건 &mdash; <strong>펀치 25회 이상</strong></span></div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+        <div style="font-family:'Jua',sans-serif;color:#FFD98A;font-size:1em;margin-bottom:8px;">&#128176; 보상 (6종 공통)</div>
+        <div class="mg-tbl">
+          <span class="mg-h">판정</span><span class="mg-h">쉬움</span><span class="mg-h">보통</span><span class="mg-h">어려움</span>
+          <span class="mg-r">대성공 &#9733;3</span><span class="mg-v mg-best">250</span><span class="mg-v mg-best">500</span><span class="mg-v mg-best">800</span>
+          <span class="mg-r">성공 &#9733;2</span><span class="mg-v">150</span><span class="mg-v">300</span><span class="mg-v">450</span>
+          <span class="mg-r">성공 &#9733;1</span><span class="mg-v">100</span><span class="mg-v">200</span><span class="mg-v">300</span>
+          <span class="mg-r">실패</span><span class="mg-v mg-fail">10</span><span class="mg-v mg-fail">10</span><span class="mg-v mg-fail">10</span>
+        </div>
+        <div style="font-size:.8em;color:rgba(255,255,255,.65);line-height:1.7;margin-top:10px;">
+          <strong>어려움 대성공(800)이 쉬움 대성공(250)의 3배가 넘어요.</strong>
+          실패해도 어느 난이도든 10포인트라 손해가 거의 없으니, 해금됐다면 어려움으로 도전하는 편이 이득이에요.
+        </div>
+      </div>
+
+      <div class="tip"><span class="tip-em">&#128273;</span><span>
+        난이도는 <strong>행성 레벨</strong>로 열려요 &mdash; <strong>Lv.6</strong>에서 보통,
+        <strong>Lv.9</strong>에서 어려움이 해금돼요.
+        트로픽스·글래시어에는 기기 2대를 도킹해 함께 즐기는 <strong>통신 미니게임 2종</strong>이 더 있어요.</span></div>
     </div>
 
     <!-- 교배(통신) 공략 -->
@@ -1238,8 +1317,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <img class="lb-img" id="lbImg" alt="">
 </div>
 <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
-<script src="evo-data.js?v=20260824e"></script>
-<script src="evo-render.js?v=20260824e"></script>
+<script src="evo-data.js?v=20260824f"></script>
+<script src="evo-render.js?v=20260824f"></script>
 <script>
 var CURRENT_TAB = 'bw';
 
